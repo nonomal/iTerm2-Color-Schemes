@@ -1,0 +1,41 @@
+(
+    name: "Prince of Darkness",
+    foreground: "#dcd3ff",
+    background: "#0a0714",
+    cursor: "#b47dff",
+    bright_foreground: "#dcd3ff",
+    dim_foreground: "#676175",
+
+    normal: (
+        black: "#2d1b4e",
+        red: "#6a2bbd",
+        green: "#c43dff",
+        yellow: "#3ec7ff",
+        blue: "#7a63ff",
+        magenta: "#ff4edb",
+        cyan: "#5cc8ff",
+        white: "#c5a7ff"
+    ),
+
+    bright: (
+        black: "#676175",
+        red: "#a139e6",
+        green: "#ff6bd6",
+        yellow: "#7ae6ff",
+        blue: "#9bb4ff",
+        magenta: "#e384ff",
+        cyan: "#7ae6ff",
+        white: "#f2e6ff"
+    ),
+
+    dim: (
+        black: "#2d1b4e",
+        red: "#6a2bbd",
+        green: "#c43dff",
+        yellow: "#3ec7ff",
+        blue: "#7a63ff",
+        magenta: "#ff4edb",
+        cyan: "#5cc8ff",
+        white: "#c5a7ff"
+    ),
+)

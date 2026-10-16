@@ -1,7 +1,7 @@
 [colors]
 background = #2b2b2b
 cursor = #ffffff
-cursor_foreground = #e6e1dc
+cursor_foreground = #c0bbb6
 foreground = #e6e1dc
 color0 = #000000
 color1 = #da4939
@@ -11,7 +11,7 @@ color4 = #6d9cbe
 color5 = #d0d0ff
 color6 = #6e9cbe
 color7 = #ffffff
-color8 = #323232
+color8 = #585858
 color9 = #ff7b6b
 color10 = #83d182
 color11 = #ffff7c

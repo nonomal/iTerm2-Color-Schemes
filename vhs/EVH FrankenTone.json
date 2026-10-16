@@ -1,0 +1,23 @@
+{
+  "name": "EVH FrankenTone",
+  "black": "#e7d8d0",
+  "red": "#ffb4a5",
+  "green": "#e6d27e",
+  "yellow": "#f4d45d",
+  "blue": "#a9cbe7",
+  "purple": "#d9c3c9",
+  "cyan": "#a7d7d7",
+  "white": "#f7ede5",
+  "brightBlack": "#c9b8b1",
+  "brightRed": "#ffd0bf",
+  "brightGreen": "#f2e4a0",
+  "brightYellow": "#ffe27d",
+  "brightBlue": "#c5ddf3",
+  "brightPurple": "#f0d8de",
+  "brightCyan": "#c4e9e8",
+  "brightWhite": "#ffffff",
+  "background": "#76231f",
+  "foreground": "#f7ede5",
+  "cursor": "#f5cc48",
+  "selection": "#201719"
+}

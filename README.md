@@ -1,3 +1,5 @@
+[![Public beta. Our next-generation, interactive app is currently in beta! Come try it out at terminalthemes.com!](images/beta-banner.svg)](https://terminalthemes.com)
+
 # iTerm Color Schemes
 
 - [Intro](#intro)
@@ -20,12 +22,15 @@
   - [Windows Terminal color schemes](#windows-terminal-color-schemes)
   - [Alacritty color schemes](#alacritty-color-schemes)
   - [Ghostty color schemes](#ghostty-color-schemes)
+  - [Otty color schemes](#otty-color-schemes)
   - [Termux color schemes](#termux-color-schemes)
   - [Generic color schemes](#generic-color-schemes)
+  - [Vim color schemes](#vim-color-schemes)
+  - [Machine-readable schemes (JSONL)](#machine-readable-schemes-jsonl)
 
 ## Intro
 
-This is a set of color schemes for iTerm (aka iTerm2). It also includes ports to Terminal, Konsole, PuTTY, Xresources, XRDB, Remmina, Termite, XFCE, Tilda, FreeBSD VT, Terminator, Kitty, Ghostty, MobaXterm, LXTerminal, Microsoft's Windows Terminal, Visual Studio, Alacritty
+This is a set of color schemes for iTerm (aka iTerm2). It also includes ports to Terminal, Konsole, PuTTY, Xresources, XRDB, Remmina, Termite, XFCE, Tilda, FreeBSD VT, Terminator, Kitty, Ghostty, Otty, MobaXterm, LXTerminal, Microsoft's Windows Terminal, Visual Studio, Alacritty, Vim
 
 Screenshots below and in the [screenshots](screenshots/) directory.
 
@@ -34,6 +39,8 @@ Screenshots below and in the [screenshots](screenshots/) directory.
 There are 3 ways to install an iTerm theme:
 
 - Direct way via keyboard shortcut:
+
+
 
   - Launch iTerm 2. Get the latest version at <a href="http://www.iterm2.com">iterm2.com</a>
   - Type CMD+i (⌘+i)
@@ -80,7 +87,7 @@ There are 3 ways to install an iTerm theme:
 ### Using Docker
 
 If docker is installed, the script `generate-all.sh` will do most of the
-steps described in [Prerequisits](#prerequisits), except for the instructions
+steps described in [Prerequisites](#prerequisites), except for the instructions
 related to `pyenv` as this is not required in a docker container dedicated to
 generating the required files.
 
@@ -105,6 +112,16 @@ an interactive terminal session inside the container.
 
 Have a great theme? Send it to me via a Pull Request!
 
+#### Theme naming
+
+Name source files exactly as the theme should be displayed. Use the human-readable
+name — no slugification, no replacing spaces with underscores.
+
+- iTerm2: `schemes/Your Theme Name.itermcolors`
+- YAML: `yaml/Your Theme Name.yml` (see [yaml/README.md](/yaml/README.md))
+
+Quote names with spaces in shell commands: `python3 tools/gen.py -s "Your Theme Name"`.
+
 #### Have an iTerm theme?
 
 1. Get your theme's`.itermcolors` file.
@@ -114,56 +131,31 @@ Have a great theme? Send it to me via a Pull Request!
    - Click on **Color Presets**
    - Click on **Export**
    - Save the .itermcolors file
-   - Adjust the [Color Space](#color-space)
-2. Put your theme file into `/schemes/`
-   - `mv <your-itermcolors-file> schemes/`
-3. Continue with the "Create derived versions" below.
-
-##### Color Space
-
-iTerm seems to store the colors in its color presets in P3 color space.
-The tools only can handle sRGB color space.
-To convert an `.itermcolors` file int sRGB color space, use the provided `p3tosRGB.py` tool:
-
-```shell
-python3 tools/p3tosRGB.py schemes/YOUR_SCHEME
-```
-
-When using Docker:
-
-```shell
-./generate-all.sh debug
-python3 tools/p3tosRGB.py schemes/YOUR_SCHEME
-```
-
-This will overwrite your scheme with a converted version.
+2. Put your theme file into `/schemes/`, named as you want it displayed.
+   - `mv <your-itermcolors-file> schemes/"Your Theme Name.itermcolors"`
 
 #### Have a theme in another format?
 
-1. Convert it to the YAML format specified in `yaml/README.md`.
+1. Convert it to the YAML format specified in [yaml/README.md](/yaml/README.md).
    This is an extension of the format supported by the [Gogh](https://github.com/Gogh-Co/Gogh/) project.
    - If it helps, you can use `tools/kitty_to_yaml.py` and `tools/ghostty_to_yaml.py`.
      These tools accept configuration file streamed into stdin, and output a YAML fragment to stdout.
-2. Put the YAML file in `yaml/`, with the `.yml` extension.
-3. Continue with the "Create derived versions" below.
+2. Put the YAML file in `yaml/` as `Your Theme Name.yml`.
 
-#### Create derived versions
-
-If you have `make` installed, steps 1 to 4 can be run with `make` from the root of the repository.
+#### Test your theme
 
 1. Generate other formats for your theme using the `gen.py` script.
-   - `python3 tools/gen.py`
-2. If you only want to generate files for your theme, you can specify this with the `-s` flag.
-   - `python3 tools/gen.py -s Dracula`
+   - `python3 tools/gen.py -s "Your Theme Name"`
+2. Optionally check WCAG contrast (`.itermcolors` only; YAML themes must be generated first).
+   - `python3 tools/wcag_check.py -s "Your Theme Name"`
+   - Failing checks are OK — `gen.py` may adjust colors during generation to meet the minimum contrast threshold (1.75:1).
 3. Generate a screenshot of your theme using the `screenshot_gen` tool.
    - `pushd tools && python3 -m screenshot_gen && popd`. This will generate new screenshots where they are missing.
    - If you have `oxipng` or `zopflipng` installed, the screenshot will be optimized for you.
-4. Run `generate_screenshots_readme.py` to include your theme's screenshot in the `screenshots/README.md` file:
-   - `python3 tools/generate_screenshots_readme.py`
 
-#### Add your theme to the README
+#### Update `CREDITS.md` (optional)
 
-1. Update `README.md` to include your theme and screenshot. Also update `CREDITS.md` to credit yourself for your contribution.
+1. Update `CREDITS.md` to credit yourself for your contribution.
 
 ### How to add new template
 
@@ -215,1660 +207,3263 @@ Do you want to convert existing iTerm themes to themes for your favorite termina
 
 6. If in the process you had to add new dependencies or update the version of python, do not forget to indicate this in `requirements.txt` or `.python-version`.
 
+<!-- SCREENSHOTS_BEGIN -->
+
 ## Screenshots
+
+The screenshots are categorized.
+
+- [Dark Themes](#darkthemes)
+- [Light Themes](#lightthemes)
+
+### Dark Themes<a name="darkthemes"><a/>
 
 ### 0x96f
 
-![Screenshot](screenshots/0x96f.png)
+![Screenshot](/screenshots/0x96f.png)
 
 ### 12-bit Rainbow
 
-![Screenshot](screenshots/12-bit_rainbow.png)
+![Screenshot](/screenshots/12-bit-rainbow.png)
 
-### 3024 Day
+### 13th Floor
 
-![Screenshot](screenshots/3024_day.png)
+![Screenshot](/screenshots/13th-floor.png)
 
 ### 3024 Night
 
-![Screenshot](screenshots/3024_night.png)
+![Screenshot](/screenshots/3024-night.png)
+
+### 5150 Mode
+
+![Screenshot](/screenshots/5150-mode.png)
 
 ### Aardvark Blue
 
-![Screenshot](screenshots/aardvark_blue.png)
+![Screenshot](/screenshots/aardvark-blue.png)
+
+### Aardvark Ink
+
+![Screenshot](/screenshots/aardvark-ink.png)
+
+### Abandoned
+
+![Screenshot](/screenshots/abandoned.png)
 
 ### Abernathy
 
-![Screenshot](screenshots/abernathy.png)
+![Screenshot](/screenshots/abernathy.png)
+
+### Acid Lime
+
+![Screenshot](/screenshots/acid-lime.png)
+
+### Adobe Moon
+
+![Screenshot](/screenshots/adobe-moon.png)
+
+### Adventure Time
+
+![Screenshot](/screenshots/adventure-time.png)
 
 ### Adventure
 
-![Screenshot](screenshots/adventure.png)
-
-### AdventureTime
-
-![Screenshot](screenshots/adventure_time.png)
+![Screenshot](/screenshots/adventure.png)
 
 ### Adwaita Dark
 
-![Screenshot](screenshots/adwaita_dark.png)
+![Screenshot](/screenshots/adwaita-dark.png)
 
-### Adwaita
+### After Hours
 
-![Screenshot](screenshots/adwaita.png)
+![Screenshot](/screenshots/after-hours.png)
 
 ### Afterglow
 
-![Screenshot](screenshots/afterglow.png)
+![Screenshot](/screenshots/afterglow.png)
 
-### Alabaster
+### Agave Dusk
 
-![Screenshot](screenshots/alabaster.png)
+![Screenshot](/screenshots/agave-dusk.png)
 
-### AlienBlood
+### Aizen Dark
 
-![Screenshot](screenshots/alien_blood.png)
+![Screenshot](/screenshots/aizen-dark.png)
+
+### Alien Blood
+
+![Screenshot](/screenshots/alien-blood.png)
+
+### Amber CRT Retro
+
+![Screenshot](/screenshots/amber-crt-retro.png)
+
+### Analyzed Dark
+
+![Screenshot](/screenshots/analyzed-dark.png)
 
 ### Andromeda
 
-![Screenshot](screenshots/andromeda.png)
+![Screenshot](/screenshots/andromeda.png)
 
 ### Apple Classic
 
-![Screenshot](screenshots/apple-classic.png)
+![Screenshot](/screenshots/apple-classic.png)
 
 ### Apple System Colors
 
-![Screenshot](screenshots/apple-system-colors.png)
-
-### Apple System Colors Light
-
-![Screenshot](screenshots/apple_system_colors_light.png)
+![Screenshot](/screenshots/apple-system-colors.png)
 
 ### Arcoiris
 
-![Screenshot](screenshots/arcoiris.png)
+![Screenshot](/screenshots/arcoiris.png)
 
 ### Ardoise
 
-![Screenshot](screenshots/ardoise.png)
+![Screenshot](/screenshots/ardoise.png)
 
 ### Argonaut
 
-![Screenshot](screenshots/argonaut.png)
+![Screenshot](/screenshots/argonaut.png)
+
+### Arizona Monsoon
+
+![Screenshot](/screenshots/arizona-monsoon.png)
 
 ### Arthur
 
-![Screenshot](screenshots/arthur.png)
+![Screenshot](/screenshots/arthur.png)
 
-### AtelierSulphurpool
+### Atelier Sulphurpool
 
-![Screenshot](screenshots/atelier-sulphurpool_dark.png)
+![Screenshot](/screenshots/atelier-sulphurpool.png)
 
-### Atom
+### Atlas Ragnarok
 
-![Screenshot](screenshots/atom.png)
+![Screenshot](/screenshots/atlas-ragnarok.png)
 
 ### Atom One Dark
 
-![Screenshot](screenshots/atom_one_dark.png)
+![Screenshot](/screenshots/atom-one-dark.png)
 
-### Atom One Light
+### Atom
 
-![Screenshot](screenshots/atom_one_light.png)
+![Screenshot](/screenshots/atom.png)
 
-### ayu
+### Aura Dark
 
-![Screenshot](screenshots/ayu.png)
-
-### ayu Light
-
-![Screenshot](screenshots/ayu_light.png)
-
-### ayu Mirage
-
-![Screenshot](screenshots/ayu_mirage.png)
+![Screenshot](/screenshots/aura-dark.png)
 
 ### Aura
 
-![Screenshot](screenshots/aura.png)
+![Screenshot](/screenshots/aura.png)
+
+### Aurora Drift
+
+![Screenshot](/screenshots/aurora-drift.png)
 
 ### Aurora
 
-![Screenshot](screenshots/aurora.png)
+![Screenshot](/screenshots/aurora.png)
+
+### Autumn After Dark
+
+![Screenshot](/screenshots/autumn-after-dark.png)
+
+### Ayu Mirage
+
+![Screenshot](/screenshots/ayu-mirage.png)
+
+### Ayu
+
+![Screenshot](/screenshots/ayu.png)
+
+### Aztec Sunset
+
+![Screenshot](/screenshots/aztec-sunset.png)
 
 ### Banana Blueberry
 
-![Screenshot](screenshots/banana_blueberry.png)
+![Screenshot](/screenshots/banana-blueberry.png)
+
+### Barrel Cactus
+
+![Screenshot](/screenshots/barrel-cactus.png)
+
+### base16-icy
+
+![Screenshot](/screenshots/base16-icy.png)
 
 ### Batman
 
-![Screenshot](screenshots/batman.png)
-
-### Belafonte Day
-
-![Screenshot](screenshots/belafonte_day.png)
+![Screenshot](/screenshots/batman.png)
 
 ### Belafonte Night
 
-![Screenshot](screenshots/belafonte_night.png)
+![Screenshot](/screenshots/belafonte-night.png)
 
-### BirdsOfParadise
+### Belfry
 
-![Screenshot](screenshots/birds_of_paradise.png)
+![Screenshot](/screenshots/belfry.png)
+
+### Birds Of Paradise
+
+![Screenshot](/screenshots/birds-of-paradise.png)
+
+### Black Box Recorder
+
+![Screenshot](/screenshots/black-box-recorder.png)
+
+### Black Cat
+
+![Screenshot](/screenshots/black-cat.png)
 
 ### Black Metal (Bathory)
 
-![Screenshot](screenshots/black_metal_bathory.png)
+![Screenshot](/screenshots/black-metal-bathory.png)
 
 ### Black Metal (Burzum)
 
-![Screenshot](screenshots/black_metal_burzum.png)
+![Screenshot](/screenshots/black-metal-burzum.png)
 
 ### Black Metal (Dark Funeral)
 
-![Screenshot](screenshots/black_metal_dark_funeral.png)
+![Screenshot](/screenshots/black-metal-dark-funeral.png)
 
 ### Black Metal (Gorgoroth)
 
-![Screenshot](screenshots/black_metal_gorgoroth.png)
+![Screenshot](/screenshots/black-metal-gorgoroth.png)
 
 ### Black Metal (Immortal)
 
-![Screenshot](screenshots/black_metal_immortal.png)
+![Screenshot](/screenshots/black-metal-immortal.png)
 
 ### Black Metal (Khold)
 
-![Screenshot](screenshots/black_metal_khold.png)
+![Screenshot](/screenshots/black-metal-khold.png)
 
 ### Black Metal (Marduk)
 
-![Screenshot](screenshots/black_metal_marduk.png)
+![Screenshot](/screenshots/black-metal-marduk.png)
 
 ### Black Metal (Mayhem)
 
-![Screenshot](screenshots/black_metal_mayhem.png)
+![Screenshot](/screenshots/black-metal-mayhem.png)
 
 ### Black Metal (Nile)
 
-![Screenshot](screenshots/black_metal_nile.png)
+![Screenshot](/screenshots/black-metal-nile.png)
 
 ### Black Metal (Venom)
 
-![Screenshot](screenshots/black_metal_venom.png)
+![Screenshot](/screenshots/black-metal-venom.png)
 
 ### Black Metal
 
-![Screenshot](screenshots/black_metal.png)
+![Screenshot](/screenshots/black-metal.png)
 
 ### Blazer
 
-![Screenshot](screenshots/blazer.png)
+![Screenshot](/screenshots/blazer.png)
 
-### BlueBerry Pie
+### Blood Moon
 
-![Screenshot](screenshots/blueberry_pie.png)
+![Screenshot](/screenshots/blood-moon.png)
 
-### BlueDolphin
+### Blue Berry Pie
 
-![Screenshot](screenshots/BlueDolphin.png)
+![Screenshot](/screenshots/blue-berry-pie.png)
+
+### Blue Dolphin
+
+![Screenshot](/screenshots/blue-dolphin.png)
 
 ### Blue Matrix
 
-![Screenshot](screenshots/blue_matrix.png)
+![Screenshot](/screenshots/blue-matrix.png)
 
 ### Bluloco Dark
 
-![Screenshot](screenshots/bluloco_dark.png)
-
-### Bluloco Light
-
-![Screenshot](screenshots/bluloco_light.png)
+![Screenshot](/screenshots/bluloco-dark.png)
 
 ### Borland
 
-![Screenshot](screenshots/borland.png)
+![Screenshot](/screenshots/borland.png)
 
 ### Box
 
-![Screenshot](screenshots/box.png)
+![Screenshot](/screenshots/box.png)
 
-### Breadog
+### branch
 
-![Screenshot](screenshots/breadog.png)
+![Screenshot](/screenshots/branch.png)
 
 ### Breeze
 
-![Screenshot](screenshots/breeze.png)
+![Screenshot](/screenshots/breeze.png)
 
 ### Bright Lights
 
-![Screenshot](screenshots/bright_lights.png)
+![Screenshot](/screenshots/bright-lights.png)
 
 ### Broadcast
 
-![Screenshot](screenshots/broadcast.png)
+![Screenshot](/screenshots/broadcast.png)
 
 ### Brogrammer
 
-![Screenshot](screenshots/brogrammer.png)
+![Screenshot](/screenshots/brogrammer.png)
+
+### Builtin Dark
+
+![Screenshot](/screenshots/builtin-dark.png)
+
+### Builtin Pastel Dark
+
+![Screenshot](/screenshots/builtin-pastel-dark.png)
+
+### Builtin Tango Dark
+
+![Screenshot](/screenshots/builtin-tango-dark.png)
 
 ### C64
 
-![Screenshot](screenshots/c64.png)
+![Screenshot](/screenshots/c64.png)
 
 ### Calamity
 
-![Screenshot](screenshots/calamity.png)
+![Screenshot](/screenshots/calamity.png)
 
-### Catppuccin Frappé
+### Caliche
 
-![Screenshot](screenshots/catppuccin-frappe.png)
+![Screenshot](/screenshots/caliche.png)
 
-### Catppuccin Latte
+### Candlelight
 
-![Screenshot](screenshots/catppuccin-latte.png)
+![Screenshot](/screenshots/candlelight.png)
+
+### Canyon Shadow
+
+![Screenshot](/screenshots/canyon-shadow.png)
+
+### Canyon Walnut
+
+![Screenshot](/screenshots/canyon-walnut.png)
+
+### Carbonfox
+
+![Screenshot](/screenshots/carbonfox.png)
+
+### Catppuccin Frappe
+
+![Screenshot](/screenshots/catppuccin-frappe.png)
 
 ### Catppuccin Macchiato
 
-![Screenshot](screenshots/catppuccin-macchiato.png)
+![Screenshot](/screenshots/catppuccin-macchiato.png)
 
 ### Catppuccin Mocha
 
-![Screenshot](screenshots/catppuccin-mocha.png)
+![Screenshot](/screenshots/catppuccin-mocha.png)
+
+### Catthode
+
+![Screenshot](/screenshots/catthode.png)
 
 ### CGA
 
-![Screenshot](screenshots/cga.png)
+![Screenshot](/screenshots/cga.png)
 
 ### Chalk
 
-![Screenshot](screenshots/chalk.png)
+![Screenshot](/screenshots/chalk.png)
 
 ### Chalkboard
 
-![Screenshot](screenshots/chalkboard.png)
+![Screenshot](/screenshots/chalkboard.png)
 
-### ChallengerDeep
+### Challenger Deep
 
-![Screenshot](screenshots/challenger_deep.png)
+![Screenshot](/screenshots/challenger-deep.png)
+
+### Charcoal
+
+![Screenshot](/screenshots/charcoal.png)
 
 ### Chester
 
-![Screenshot](screenshots/chester.png)
+![Screenshot](/screenshots/chester.png)
+
+### Cholla
+
+![Screenshot](/screenshots/cholla.png)
 
 ### Ciapre
 
-![Screenshot](screenshots/ciapre.png)
+![Screenshot](/screenshots/ciapre.png)
+
+### Citrus Ink
+
+![Screenshot](/screenshots/citrus-ink.png)
 
 ### Citruszest
 
-![Screenshot](screenshots/citruszest.png)
+![Screenshot](/screenshots/citruszest.png)
 
-### CLRS
+### Claude Dark
 
-![Screenshot](screenshots/clrs.png)
+![Screenshot](/screenshots/claude-dark.png)
+
+### Clear Dark
+
+![Screenshot](/screenshots/clear-dark.png)
+
+### Clockwork Gold
+
+![Screenshot](/screenshots/clockwork-gold.png)
 
 ### Cobalt Neon
 
-![Screenshot](screenshots/cobalt_neon.png)
+![Screenshot](/screenshots/cobalt-neon.png)
+
+### Cobalt Next Dark
+
+![Screenshot](/screenshots/cobalt-next-dark.png)
+
+### Cobalt Next Minimal
+
+![Screenshot](/screenshots/cobalt-next-minimal.png)
+
+### Cobalt Next
+
+![Screenshot](/screenshots/cobalt-next.png)
 
 ### Cobalt2
 
-![Screenshot](screenshots/cobalt2.png)
+![Screenshot](/screenshots/cobalt2.png)
 
-### Coffee
+### Cobweb
 
-![Screenshot](screenshots/Coffee.png)
+![Screenshot](/screenshots/cobweb.png)
 
-### CrayonPonyFish
+### Cool Night
 
-### CutiePro
+![Screenshot](/screenshots/cool-night.png)
 
-![Screenshot](screenshots/CutiePro.png)
+### Copper Canyon
 
-![Screenshot](screenshots/crayon_pony_fish.png)
+![Screenshot](/screenshots/copper-canyon.png)
+
+### Count Terminal
+
+![Screenshot](/screenshots/count-terminal.png)
+
+### Crayon Pony Fish
+
+![Screenshot](/screenshots/crayon-pony-fish.png)
+
+### CRT Afterglow
+
+![Screenshot](/screenshots/crt-afterglow.png)
+
+### CRT Amber
+
+![Screenshot](/screenshots/crt-amber.png)
+
+### Crypt Keeper
+
+![Screenshot](/screenshots/crypt-keeper.png)
+
+### Crystal Ball
+
+![Screenshot](/screenshots/crystal-ball.png)
+
+### Cursed VHS
+
+![Screenshot](/screenshots/cursed-vhs.png)
+
+### Cursor Dark
+
+![Screenshot](/screenshots/cursor-dark.png)
+
+### Cutie Pro
+
+![Screenshot](/screenshots/cutie-pro.png)
 
 ### Cyberdyne
 
-![Screenshot](screenshots/cyberdyne.png)
-
-### Cyberpunk
-
-![Screenshot](screenshots/cyberpunk.png)
+![Screenshot](/screenshots/cyberdyne.png)
 
 ### Cyberpunk Scarlet Protocol
 
-![Screenshot](screenshots/cyberpunk_scarlet_protocol.png)
+![Screenshot](/screenshots/cyberpunk-scarlet-protocol.png)
+
+### cyberpunk-icy
+
+![Screenshot](/screenshots/cyberpunk-icy.png)
+
+### Cyberpunk
+
+![Screenshot](/screenshots/cyberpunk.png)
+
+### Dalton Dark
+
+![Screenshot](/screenshots/dalton-dark.png)
+
+### Dark 2026
+
+![Screenshot](/screenshots/dark-2026.png)
 
 ### Dark Modern
 
-![Screenshot](screenshots/dark_modern.png)
+![Screenshot](/screenshots/dark-modern.png)
 
 ### Dark Pastel
 
-![Screenshot](screenshots/dark_pastel.png)
+![Screenshot](/screenshots/dark-pastel.png)
 
 ### Dark+
 
-![Screenshot](screenshots/dark_plus.png)
+![Screenshot](/screenshots/dark.png)
+
+### Darkermatrix
+
+![Screenshot](/screenshots/darkermatrix.png)
+
+### Darkmatrix
+
+![Screenshot](/screenshots/darkmatrix.png)
 
 ### Darkside
 
-![Screenshot](screenshots/darkside.png)
+![Screenshot](/screenshots/darkside.png)
 
-### Dayfox
+### datum (dark)
 
-![Screenshot](screenshots/dayfox.png)
+![Screenshot](/screenshots/datum-dark.png)
+
+### Dead Letter Office
+
+![Screenshot](/screenshots/dead-letter-office.png)
+
+### Deep Current
+
+![Screenshot](/screenshots/deep-current.png)
 
 ### Deep
 
-![Screenshot](screenshots/deep.png)
+![Screenshot](/screenshots/deep.png)
+
+### Desert Bloom
+
+![Screenshot](/screenshots/desert-bloom.png)
+
+### Desert Moon
+
+![Screenshot](/screenshots/desert-moon.png)
+
+### Desert Rose
+
+![Screenshot](/screenshots/desert-rose.png)
+
+### Desert Thunder
+
+![Screenshot](/screenshots/desert-thunder.png)
 
 ### Desert
 
-![Screenshot](screenshots/desert.png)
+![Screenshot](/screenshots/desert.png)
+
+### Detroit After Dark
+
+![Screenshot](/screenshots/detroit-after-dark.png)
 
 ### Detuned
 
-![Screenshot](screenshots/detuned.png)
+![Screenshot](/screenshots/detuned.png)
+
+### Diary of a Lunatic
+
+![Screenshot](/screenshots/diary-of-a-lunatic.png)
 
 ### Dimidium
 
-![Screenshot](screenshots/dimidium.png)
+![Screenshot](/screenshots/dimidium.png)
 
-### DimmedMonokai
+### Dimmed Monokai
 
-![Screenshot](screenshots/dimmed_monokai.png)
+![Screenshot](/screenshots/dimmed-monokai.png)
+
+### Django Reborn Again
+
+![Screenshot](/screenshots/django-reborn-again.png)
+
+### Django Smooth
+
+![Screenshot](/screenshots/django-smooth.png)
 
 ### Django
 
-![Screenshot](screenshots/django.png)
+![Screenshot](/screenshots/django.png)
 
-### DjangoRebornAgain
+### Dogxi Misty
 
-![Screenshot](screenshots/DjangoRebornAgain.png)
-
-### DjangoSmoothy
-
-![Screenshot](screenshots/DjangoSmoothy.png)
+![Screenshot](/screenshots/dogxi-misty.png)
 
 ### Doom One
 
-![Screenshot](screenshots/doom_one.png)
+![Screenshot](/screenshots/doom-one.png)
 
 ### Doom Peacock
 
-![Screenshot](screenshots/doom_peacock.png)
+![Screenshot](/screenshots/doom-peacock.png)
 
-### DotGov
+### Dot Gov
 
-![Screenshot](screenshots/dot_gov.png)
+![Screenshot](/screenshots/dot-gov.png)
 
-### Dracula
+### Dracula+ High Contrast
 
-![Screenshot](screenshots/dracula.png)
+![Screenshot](/screenshots/dracula-high-contrast.png)
 
 ### Dracula+
 
-![Screenshot](screenshots/dracula+.png)
+![Screenshot](/screenshots/dracula.png)
+
+### Dracula
+
+![Screenshot](/screenshots/dracula.png)
+
+### Dream Onward
+
+![Screenshot](/screenshots/dream-onward.png)
+
+### Driftwood
+
+![Screenshot](/screenshots/driftwood.png)
 
 ### Duckbones
 
-![Screenshot](screenshots/duckbones.png)
+![Screenshot](/screenshots/duckbones.png)
 
 ### Duotone Dark
 
-![Screenshot](screenshots/duotone_dark.png)
+![Screenshot](/screenshots/duotone-dark.png)
+
+### Duskfox
+
+![Screenshot](/screenshots/duskfox.png)
 
 ### Earthsong
 
-![Screenshot](screenshots/earthsong.png)
+![Screenshot](/screenshots/earthsong.png)
+
+### Eclipse
+
+![Screenshot](/screenshots/eclipse.png)
+
+### Ectoplasm
+
+![Screenshot](/screenshots/ectoplasm.png)
+
+### Eight Hundred
+
+![Screenshot](/screenshots/eight-hundred.png)
+
+### Electric Voodoo
+
+![Screenshot](/screenshots/electric-voodoo.png)
 
 ### Electron Highlighter
 
-![Screenshot](screenshots/electron-highlighter.png)
+![Screenshot](/screenshots/electron-highlighter.png)
 
 ### Elegant
 
-![Screenshot](screenshots/elegant.png)
+![Screenshot](/screenshots/elegant.png)
 
 ### Elemental
 
-![Screenshot](screenshots/elemental.png)
+![Screenshot](/screenshots/elemental.png)
 
 ### Elementary
 
-![Screenshot](screenshots/elementary.png)
+![Screenshot](/screenshots/elementary.png)
 
-### Embers
+### Embark
 
-![Screenshot](screenshots/embers.png)
+![Screenshot](/screenshots/embark.png)
+
+### Ember Peak
+
+![Screenshot](/screenshots/ember-peak.png)
+
+### Ember
+
+![Screenshot](/screenshots/ember.png)
+
+### Emberglass
+
+![Screenshot](/screenshots/emberglass.png)
+
+### Embers Dark
+
+![Screenshot](/screenshots/embers-dark.png)
+
+### Emerald Synth
+
+![Screenshot](/screenshots/emerald-synth.png)
 
 ### ENCOM
 
-![Screenshot](screenshots/encom.png)
-
-### Espresso
-
-![Screenshot](screenshots/espresso.png)
+![Screenshot](/screenshots/encom.png)
 
 ### Espresso Libre
 
-![Screenshot](screenshots/espresso_libre.png)
+![Screenshot](/screenshots/espresso-libre.png)
+
+### Espresso
+
+![Screenshot](/screenshots/espresso.png)
+
+### Eventide
+
+![Screenshot](/screenshots/eventide.png)
 
 ### Everblush
 
-![Screenshot](screenshots/everblush.png)
+![Screenshot](/screenshots/everblush.png)
 
-### Everforest Dark - Hard
+### Everforest Dark Hard
 
-![Screenshot](screenshots/everforest_dark_hard.png)
+![Screenshot](/screenshots/everforest-dark-hard.png)
 
-### Everforest Light - Med
+### Everforest Dark Med
 
-![Screenshot](screenshots/everforest_light_med.png)
+![Screenshot](/screenshots/everforest-dark-med.png)
 
-### Fairyfloss
+### Everforest Dark Soft
 
-![Screenshot](screenshots/fairyfloss.png)
+![Screenshot](/screenshots/everforest-dark-soft.png)
+
+### Evergreen
+
+![Screenshot](/screenshots/evergreen.png)
+
+### EVH FrankenTone
+
+![Screenshot](/screenshots/evh-frankentone.png)
+
+### eyesclosed
+
+![Screenshot](/screenshots/eyesclosed.png)
 
 ### Fahrenheit
 
-![Screenshot](screenshots/fahrenheit.png)
+![Screenshot](/screenshots/fahrenheit.png)
+
+### Fairyfloss
+
+![Screenshot](/screenshots/fairyfloss.png)
 
 ### Farmhouse Dark
 
-![Screenshot](screenshots/farmhouse-dark.png)
-
-### Farmhouse Light
-
-![Screenshot](screenshots/farmhouse-light.png)
+![Screenshot](/screenshots/farmhouse-dark.png)
 
 ### Fideloper
 
-![Screenshot](screenshots/fideloper.png)
+![Screenshot](/screenshots/fideloper.png)
 
 ### Firefly Traditional
 
-![Screenshot](screenshots/firefly-traditional.png)
+![Screenshot](/screenshots/firefly-traditional.png)
 
-### FirefoxDev
+### Firefox Dev
 
-![Screenshot](screenshots/firefox_dev.png)
+![Screenshot](/screenshots/firefox-dev.png)
 
 ### Firewatch
 
-![Screenshot](screenshots/firewatch.png)
+![Screenshot](/screenshots/firewatch.png)
 
-### FishTank
+### Fish Tank
 
-![Screenshot](screenshots/fish_tank.png)
+![Screenshot](/screenshots/fish-tank.png)
 
 ### Flat
 
-![Screenshot](screenshots/flat.png)
+![Screenshot](/screenshots/flat.png)
 
 ### Flatland
 
-![Screenshot](screenshots/flatland.png)
+![Screenshot](/screenshots/flatland.png)
 
 ### Flexoki Dark
 
-![Screenshot](screenshots/flexoki-dark.png)
-
-### Flexoki Light
-
-![Screenshot](screenshots/flexoki-light.png)
+![Screenshot](/screenshots/flexoki-dark.png)
 
 ### Floraverse
 
-![Screenshot](screenshots/floraverse.png)
+![Screenshot](/screenshots/floraverse.png)
 
 ### Forest Blue
 
-![Screenshot](screenshots/forest_blue.png)
+![Screenshot](/screenshots/forest-blue.png)
+
+### Forge Ember
+
+![Screenshot](/screenshots/forge-ember.png)
+
+### Forged in Steel
+
+![Screenshot](/screenshots/forged-in-steel.png)
 
 ### Framer
 
-![Screenshot](screenshots/framer.png)
+![Screenshot](/screenshots/framer.png)
 
-### FrontEndDelight
+### Front End Delight
 
-![Screenshot](screenshots/front_end_delight.png)
+![Screenshot](/screenshots/front-end-delight.png)
 
-### FunForrest
+### Fun Forrest
 
-![Screenshot](screenshots/fun_forrest.png)
+![Screenshot](/screenshots/fun-forrest.png)
 
 ### Galaxy
 
-![Screenshot](screenshots/galaxy.png)
+![Screenshot](/screenshots/galaxy.png)
 
 ### Galizur
 
-![image](screenshots/galizur.png)
+![Screenshot](/screenshots/galizur.png)
 
-### Ghostty Default StyleDark
+### Ghost Circuit
 
-![image](screenshots/Ghostty_Default_StyleDark.png)
+![Screenshot](/screenshots/ghost-circuit.png)
 
-### GitHub Dark Default
+### Ghostty Default Style Dark
 
-![image](screenshots/github-dark-default.png)
-
-### GitHub Dark Dimmed
-
-![image](screenshots/github-dark-dimmed.png)
+![Screenshot](/screenshots/ghostty-default-style-dark.png)
 
 ### GitHub Dark Colorblind
 
-![image](screenshots/github-dark-colorblind.png)
+![Screenshot](/screenshots/github-dark-colorblind.png)
+
+### GitHub Dark Default
+
+![Screenshot](/screenshots/github-dark-default.png)
+
+### GitHub Dark Dimmed
+
+![Screenshot](/screenshots/github-dark-dimmed.png)
 
 ### GitHub Dark High Contrast
 
-![image](screenshots/github-dark-high-contrast.png)
-
-### GitHub Light Default
-
-![image](screenshots/github-light-default.png)
-
-### GitHub Light Colorblind
-
-![image](screenshots/github-light-colorblind.png)
-
-### GitHub Light High Contrast
-
-![image](screenshots/github-light-high-contrast.png)
-
-### Github
-
-![Screenshot](screenshots/github.png)
+![Screenshot](/screenshots/github-dark-high-contrast.png)
 
 ### GitHub Dark
 
-![Screenshot](screenshots/github_dark.png)
-
-### GitLab Dark
-
-![Screenshot](screenshots/git_lab-dark.png)
+![Screenshot](/screenshots/github-dark.png)
 
 ### GitLab Dark Grey
 
-![Screenshot](screenshots/git_lab-dark-grey.png)
+![Screenshot](/screenshots/gitlab-dark-grey.png)
 
-### GitLab Light
+### GitLab Dark
 
-![Screenshot](screenshots/git_lab-light.png)
+![Screenshot](/screenshots/gitlab-dark.png)
 
 ### Glacier
 
-![Screenshot](screenshots/glacier.png)
+![Screenshot](/screenshots/glacier.png)
+
+### Gleam Classic
+
+![Screenshot](/screenshots/gleam-classic.png)
+
+### Gleam
+
+![Screenshot](/screenshots/gleam.png)
 
 ### Grape
 
-![Screenshot](screenshots/grape.png)
+![Screenshot](/screenshots/grape.png)
+
+### Graphite
+
+![Screenshot](/screenshots/graphite.png)
 
 ### Grass
 
-![Screenshot](screenshots/grass.png)
+![Screenshot](/screenshots/grass.png)
 
-### Grey-green
+### Graveyard Shift
 
-![Screenshot](screenshots/grey-green.png)
+![Screenshot](/screenshots/graveyard-shift.png)
+
+### Green Phosphor CRT
+
+![Screenshot](/screenshots/green-phosphor-crt.png)
+
+### Green Screen
+
+![Screenshot](/screenshots/green-screen.png)
+
+### Grey Green
+
+![Screenshot](/screenshots/grey-green.png)
+
+### Grok Night
+
+![Screenshot](/screenshots/grok-night.png)
 
 ### Gruber Darker
 
-![Screenshot](screenshots/gruber-darker.png)
-
-### Gruvbox Dark
-
-![Screenshot](screenshots/gruvbox_dark.png)
+![Screenshot](/screenshots/gruber-darker.png)
 
 ### Gruvbox Dark Hard
 
-![Screenshot](screenshots/gruvbox_dark_hard.png)
+![Screenshot](/screenshots/gruvbox-dark-hard.png)
 
-### Gruvbox Light
+### Gruvbox Dark
 
-![Screenshot](screenshots/gruvbox_light.png)
+![Screenshot](/screenshots/gruvbox-dark.png)
 
-### Gruvbox Light Hard
+### Gruvbox Material Dark
 
-![Screenshot](screenshots/gruvbox_light_hard.png)
+![Screenshot](/screenshots/gruvbox-material-dark.png)
 
-### gruvbox_material
+### Gruvbox Material
 
-![Screenshot](screenshots/gruvbox_material.png)
+![Screenshot](/screenshots/gruvbox-material.png)
 
 ### Guezwhoz
 
-![Screenshot](screenshots/guezwhoz.png)
+![Screenshot](/screenshots/guezwhoz.png)
 
 ### Hacktober
 
-![Screenshot](screenshots/hacktober.png)
+![Screenshot](/screenshots/hacktober.png)
 
 ### Hardcore
 
-![Screenshot](screenshots/hardcore.png)
+![Screenshot](/screenshots/hardcore.png)
 
 ### Harper
 
-![Screenshot](screenshots/harper.png)
+![Screenshot](/screenshots/harper.png)
 
-### Havn Daggry
+### Harvest Moon
 
-![Screenshot](screenshots/havn_daggry.png)
+![Screenshot](/screenshots/harvest-moon.png)
+
+### Haunted House
+
+![Screenshot](/screenshots/haunted-house.png)
 
 ### Havn Skumring
 
-![Screenshot](screenshots/havn_skumring.png)
+![Screenshot](/screenshots/havn-skumring.png)
 
-### HaX0R_R3D
+### HaX0R Blue
 
-![Screenshot](screenshots/hax0r_r3d.png)
+![Screenshot](/screenshots/hax0r-blue.png)
 
-### HaX0R_GR33N
+### HaX0R Gr33N
 
-![Screenshot](screenshots/hax0r_gr33n.png)
+![Screenshot](/screenshots/hax0r-gr33n.png)
 
-### HaX0R_BLUE
+### HaX0R R3D
 
-![Screenshot](screenshots/hax0r_blue.png)
+![Screenshot](/screenshots/hax0r-r3d.png)
 
-### heeler
+### Heeler
 
-![Screenshot](screenshots/heeler.png)
+![Screenshot](/screenshots/heeler.png)
+
+### Hellfire
+
+![Screenshot](/screenshots/hellfire.png)
+
+### High Voltage Highway
+
+![Screenshot](/screenshots/high-voltage-highway.png)
 
 ### Highway
 
-![Screenshot](screenshots/highway.png)
+![Screenshot](/screenshots/highway.png)
 
 ### Hipster Green
 
-![Screenshot](screenshots/hipster_green.png)
+![Screenshot](/screenshots/hipster-green.png)
 
 ### Hivacruz
 
-![Screenshot](screenshots/hivacruz.png)
+![Screenshot](/screenshots/hivacruz.png)
+
+### Hocus Pocus
+
+![Screenshot](/screenshots/hocus-pocus.png)
 
 ### Homebrew
 
-![Screenshot](screenshots/homebrew.png)
+![Screenshot](/screenshots/homebrew.png)
+
+### Hopscotch.256
+
+![Screenshot](/screenshots/hopscotch256.png)
 
 ### Hopscotch
 
-![Screenshot](screenshots/hopscotch.png)
-
-### Hopscotch 256
-
-![Screenshot](screenshots/hopscotch_256.png)
+![Screenshot](/screenshots/hopscotch.png)
 
 ### Horizon
 
-![Screenshot](screenshots/horizon.png)
+![Screenshot](/screenshots/horizon.png)
 
-### Horizon Bright
+### Hot Dog Stand
 
-![Screenshot](screenshots/horizon-bright.png)
+![Screenshot](/screenshots/hot-dog-stand.png)
 
 ### Hurtado
 
-![Screenshot](screenshots/hurtado.png)
+![Screenshot](/screenshots/hurtado.png)
 
 ### Hybrid
 
-![Screenshot](screenshots/hybrid.png)
+![Screenshot](/screenshots/hybrid.png)
 
-### IC_Green_PPL
+### Hyper
 
-![Screenshot](screenshots/ic_green_ppl.png)
+![Screenshot](/screenshots/hyper.png)
 
-### IC_Orange_PPL
+### Hysterical Frequency
 
-![Screenshot](screenshots/ic_orange_ppl.png)
+![Screenshot](/screenshots/hysterical-frequency.png)
 
-### iceberg
+### IBM 5153 CGA (Black)
 
-![Screenshot](screenshots/iceberg.png)
+![Screenshot](/screenshots/ibm-5153-cga-black.png)
 
-### IDEA Dark
+### IBM 5153 CGA
 
-![Screenshot](screenshots/idea.png)
+![Screenshot](/screenshots/ibm-5153-cga.png)
 
-### idleToes
+### IC Green PPL
 
-![Screenshot](screenshots/idleToes.png)
+![Screenshot](/screenshots/ic-green-ppl.png)
 
-### IR_Black
+### IC Orange PPL
 
-![Screenshot](screenshots/ir_black.png)
+![Screenshot](/screenshots/ic-orange-ppl.png)
+
+### Iceberg Dark
+
+![Screenshot](/screenshots/iceberg-dark.png)
+
+### Idea
+
+![Screenshot](/screenshots/idea.png)
+
+### Idle Toes
+
+![Screenshot](/screenshots/idle-toes.png)
+
+### iglass Dark
+
+![Screenshot](/screenshots/iglass-dark.png)
+
+### IR Black
+
+![Screenshot](/screenshots/ir-black.png)
 
 ### IRIX Console
 
-![Screenshot](screenshots/irix_console.png)
+![Screenshot](/screenshots/irix-console.png)
 
 ### IRIX Terminal
 
-![Screenshot](screenshots/irix_terminal.png)
+![Screenshot](/screenshots/irix-terminal.png)
 
-### iTerm2 Default
+### Isocon Dark
 
-![Screenshot](screenshots/iterm2-default.png)
+![Screenshot](/screenshots/isocon-dark.png)
 
 ### iTerm2 Dark Background
 
-![Screenshot](screenshots/iterm2-dark-background.png)
+![Screenshot](/screenshots/iterm2-dark-background.png)
 
-### iTerm2 Light Background
+### iTerm2 Default
 
-![Screenshot](screenshots/iterm2-light-background.png)
+![Screenshot](/screenshots/iterm2-default.png)
 
-### iTerm2 Pastel (Dark Background)
+### iTerm2 Pastel Dark Background
 
-![Screenshot](screenshots/iterm2-pastel-dark-background.png)
+![Screenshot](/screenshots/iterm2-pastel-dark-background.png)
 
 ### iTerm2 Smoooooth
 
-![Screenshot](screenshots/iterm2-smoooooth.png)
+![Screenshot](/screenshots/iterm2-smoooooth.png)
 
 ### iTerm2 Solarized Dark
 
-![Screenshot](screenshots/iterm2-solarized-dark.png)
-
-### iTerm2 Solarized Light
-
-![Screenshot](screenshots/iterm2-solarized-light.png)
+![Screenshot](/screenshots/iterm2-solarized-dark.png)
 
 ### iTerm2 Tango Dark
 
-![Screenshot](screenshots/iterm2-tango-dark.png)
+![Screenshot](/screenshots/iterm2-tango-dark.png)
 
-### iTerm2 Tango Light
+### Jack O' Lantern
 
-![Screenshot](screenshots/iterm2-tango-light.png)
+![Screenshot](/screenshots/jack-o-lantern.png)
 
 ### Jackie Brown
 
-![Screenshot](screenshots/jackie_brown.png)
+![Screenshot](/screenshots/jackie-brown.png)
 
 ### Japanesque
 
-![Screenshot](screenshots/japanesque.png)
+![Screenshot](/screenshots/japanesque.png)
 
 ### Jellybeans
 
-![Screenshot](screenshots/jellybeans.png)
+![Screenshot](/screenshots/jellybeans.png)
 
 ### JetBrains Darcula
 
-![Screenshot](screenshots/jetbrains_darcula.png)
+![Screenshot](/screenshots/jetbrains-darcula.png)
+
+### JetBrains Islands Dark
+
+![Screenshot](/screenshots/jetbrains-islands-dark.png)
 
 ### Jubi
 
-![Screenshot](screenshots/jubi.png)
+![Screenshot](/screenshots/jubi.png)
+
+### Jump Start
+
+![Screenshot](/screenshots/jump-start.png)
+
+### Jute Espresso
+
+![Screenshot](/screenshots/jute-espresso.png)
 
 ### Kanagawa Dragon
 
-![Screenshot](screenshots/kanagawa-dragon.png)
+![Screenshot](/screenshots/kanagawa-dragon.png)
 
 ### Kanagawa Wave
 
-![Screenshot](screenshots/kanagawa-wave.png)
+![Screenshot](/screenshots/kanagawa-wave.png)
 
 ### Kanagawabones
 
-![Screenshot](screenshots/kanagawabones.png)
+![Screenshot](/screenshots/kanagawabones.png)
+
+### Kanso Ink
+
+![Screenshot](/screenshots/kanso-ink.png)
+
+### Kanso Mist
+
+![Screenshot](/screenshots/kanso-mist.png)
+
+### Kanso Zen
+
+![Screenshot](/screenshots/kanso-zen.png)
+
+### Karasu Night
+
+![Screenshot](/screenshots/karasu-night.png)
+
+### Karma Dark Dimmed
+
+![Screenshot](/screenshots/karma-dark-dimmed.png)
+
+### Karma Dark HC
+
+![Screenshot](/screenshots/karma-dark-hc.png)
+
+### Karma Dark
+
+![Screenshot](/screenshots/karma-dark.png)
+
+### Kashmir Nights
+
+![Screenshot](/screenshots/kashmir-nights.png)
+
+### Keys Ocean Sunset HC
+
+![Screenshot](/screenshots/keys-ocean-sunset-hc.png)
+
+### Keys Ocean Sunset
+
+![Screenshot](/screenshots/keys-ocean-sunset.png)
 
 ### Kibble
 
-![Screenshot](screenshots/kibble.png)
+![Screenshot](/screenshots/kibble.png)
+
+### Kitty Default
+
+![Screenshot](/screenshots/kitty-default.png)
+
+### Kitty Low Contrast
+
+![Screenshot](/screenshots/kitty-low-contrast.png)
+
+### Klein Void
+
+![Screenshot](/screenshots/klein-void.png)
 
 ### Kolorit
 
-![Screenshot](screenshots/kolorit.png)
+![Screenshot](/screenshots/kolorit.png)
 
 ### Konsolas
 
-![Screenshot](screenshots/konsolas.png)
+![Screenshot](/screenshots/konsolas.png)
 
 ### Kurokula
 
-![Screenshot](screenshots/kurokula.png)
+![Screenshot](/screenshots/kurokula.png)
+
+### Kwyjibo
+
+![Screenshot](/screenshots/kwyjibo.png)
 
 ### Lab Fox
 
-![Screenshot](screenshots/lab_fox.png)
+![Screenshot](/screenshots/lab-fox.png)
 
 ### Laser
 
-![Screenshot](screenshots/laser.png)
+![Screenshot](/screenshots/laser.png)
+
+### Last Broadcast
+
+![Screenshot](/screenshots/last-broadcast.png)
 
 ### Later This Evening
 
-![Screenshot](screenshots/later_this_evening.png)
+![Screenshot](/screenshots/later-this-evening.png)
 
 ### Lavandula
 
-![Screenshot](screenshots/lavandula.png)
+![Screenshot](/screenshots/lavandula.png)
 
-### Light Owl
+### Lemon Graphite
 
-![Screenshot](screenshots/light_owl.png)
+![Screenshot](/screenshots/lemon-graphite.png)
 
-### LiquidCarbon
+### Liquid Carbon Transparent
 
-![Screenshot](screenshots/liquid_carbon.png)
+![Screenshot](/screenshots/liquid-carbon-transparent.png)
 
-### LiquidCarbonTransparent
+### Liquid Carbon
 
-![Screenshot](screenshots/liquid_carbon_transparent.png)
+![Screenshot](/screenshots/liquid-carbon.png)
 
-### LiquidCarbonTransparentInverse
+### Lit Cell
 
-![Screenshot](screenshots/liquid_carbon_transparent_inverse.png)
+![Screenshot](/screenshots/lit-cell.png)
 
-### LoveLace
+### London Bonfire Night
 
-![Screenshot](screenshots/lovelace.png)
+![Screenshot](/screenshots/london-bonfire-night.png)
 
-### Man Page
+### London Embankment Dusk
 
-![Screenshot](screenshots/man_page.png)
+![Screenshot](/screenshots/london-embankment-dusk.png)
+
+### London Soho Night
+
+![Screenshot](/screenshots/london-soho-night.png)
+
+### Lovelace
+
+![Screenshot](/screenshots/lovelace.png)
+
+### Madman's Diary
+
+![Screenshot](/screenshots/madmans-diary.png)
+
+### Maple Jute
+
+![Screenshot](/screenshots/maple-jute.png)
 
 ### Mariana
 
-![Screenshot](screenshots/mariana.png)
+![Screenshot](/screenshots/mariana.png)
 
-### Material
+### Material Dark
 
-![Screenshot](screenshots/material.png)
+![Screenshot](/screenshots/material-dark.png)
 
-### MaterialDark
+### Material Darker
 
-![Screenshot](screenshots/material_dark.png)
+![Screenshot](/screenshots/material-darker.png)
 
-### MaterialDarker
+### Material Design Colors
 
-![Screenshot](screenshots/material_darker.png)
+![Screenshot](/screenshots/material-design-colors.png)
 
-### MaterialDesignColors
+### Material Ocean
 
-![Screenshot](screenshots/material_design_colors.png)
-
-### MaterialOcean
-
-![Screenshot](screenshots/material_ocean.png)
+![Screenshot](/screenshots/material-ocean.png)
 
 ### Mathias
 
-![Screenshot](screenshots/mathias.png)
+![Screenshot](/screenshots/mathias.png)
 
 ### Matrix
 
-![Screenshot](screenshots/matrix.png)
+![Screenshot](/screenshots/matrix.png)
 
-### Dark Matrix
+### Matte Black
 
-![Screenshot](screenshots/darkmatrix.png)
-
-### Darker Matrix
-
-![Screenshot](screenshots/darkermatrix.png)
-
-### Melange Light
-
-![Screenshot](screenshots/melange_light.png)
-
-### Melange Dark
-
-![Screenshot](screenshots/melange_dark.png)
+![Screenshot](/screenshots/matte-black.png)
 
 ### Medallion
 
-![Screenshot](screenshots/medallion.png)
+![Screenshot](/screenshots/medallion.png)
+
+### Melange Dark
+
+![Screenshot](/screenshots/melange-dark.png)
 
 ### Mellifluous
 
-![Screenshot](screenshots/mellifluous.png)
+![Screenshot](/screenshots/mellifluous.png)
 
 ### Mellow
 
-![Screenshot](screenshots/mellow.png)
+![Screenshot](/screenshots/mellow.png)
+
+### Mesa Blue
+
+![Screenshot](/screenshots/mesa-blue.png)
+
+### Mesa Twilight
+
+![Screenshot](/screenshots/mesa-twilight.png)
+
+### Mesila One
+
+![Screenshot](/screenshots/mesila-one.png)
+
+### Miami Heat
+
+![Screenshot](/screenshots/miami-heat.png)
 
 ### Miasma
 
-![Screenshot](screenshots/miasma.png)
+![Screenshot](/screenshots/miasma.png)
+
+### Midnight Arcade
+
+![Screenshot](/screenshots/midnight-arcade.png)
 
 ### Midnight In Mojave
 
-![Screenshot](screenshots/midnight_in_mojave.png)
+![Screenshot](/screenshots/midnight-in-mojave.png)
+
+### Midnight Rambler
+
+![Screenshot](/screenshots/midnight-rambler.png)
+
+### Mindcrime
+
+![Screenshot](/screenshots/mindcrime.png)
 
 ### Mirage
 
-![Screenshot](screenshots/mirage.png)
+![Screenshot](/screenshots/mirage.png)
 
 ### Misterioso
 
-![Screenshot](screenshots/misterioso.png)
+![Screenshot](/screenshots/misterioso.png)
+
+### Modus Vivendi Deuteranopia
+
+![Screenshot](/screenshots/modus-vivendi-deuteranopia.png)
+
+### Modus Vivendi Tinted
+
+![Screenshot](/screenshots/modus-vivendi-tinted.png)
+
+### Modus Vivendi Tritanopia
+
+![Screenshot](/screenshots/modus-vivendi-tritanopia.png)
+
+### Modus Vivendi
+
+![Screenshot](/screenshots/modus-vivendi.png)
 
 ### Molokai
 
-![Screenshot](screenshots/molokai.png)
+![Screenshot](/screenshots/molokai.png)
 
-### MonaLisa
+### Molten Core
 
-![Screenshot](screenshots/mona_lisa.png)
+![Screenshot](/screenshots/molten-core.png)
+
+### Mona Lisa
+
+![Screenshot](/screenshots/mona-lisa.png)
 
 ### Monokai Classic
 
-![Screenshot](screenshots/monokai-classic.png)
-
-### Monokai Pro
-
-![Screenshot](screenshots/monokai-pro.png)
-
-### Monokai Pro Octagon
-
-![Screenshot](screenshots/monokai-pro-octagon.png)
+![Screenshot](/screenshots/monokai-classic.png)
 
 ### Monokai Pro Machine
 
-![Screenshot](screenshots/monokai-pro-machine.png)
+![Screenshot](/screenshots/monokai-pro-machine.png)
+
+### Monokai Pro Octagon
+
+![Screenshot](/screenshots/monokai-pro-octagon.png)
 
 ### Monokai Pro Ristretto
 
-![Screenshot](screenshots/monokai-pro-ristretto.png)
+![Screenshot](/screenshots/monokai-pro-ristretto.png)
 
 ### Monokai Pro Spectrum
 
-![Screenshot](screenshots/monokai-pro-spectrum.png)
+![Screenshot](/screenshots/monokai-pro-spectrum.png)
 
-### Monokai Pro Light
+### Monokai Pro
 
-![Screenshot](screenshots/monokai-pro-light.png)
-
-### Monokai Pro Light Sun
-
-![Screenshot](screenshots/monokai-pro-light-sun.png)
+![Screenshot](/screenshots/monokai-pro.png)
 
 ### Monokai Remastered
 
-![Screenshot](screenshots/monokai_remastered.png)
+![Screenshot](/screenshots/monokai-remastered.png)
 
 ### Monokai Soda
 
-![Screenshot](screenshots/monokai_soda.png)
+![Screenshot](/screenshots/monokai-soda.png)
+
+### Monokai SublimeText
+
+![Screenshot](/screenshots/monokai-sublimetext.png)
 
 ### Monokai Vivid
 
-![Screenshot](screenshots/monokai_vivid.png)
+![Screenshot](/screenshots/monokai-vivid.png)
 
-### moonfly
+### Monospace Dark
 
-![Screenshot](screenshots/moonfly.png)
+![Screenshot](/screenshots/monospace-dark.png)
 
-### N0tch2k
+### Monsoon Mesa
 
-![Screenshot](screenshots/n0tch2k.png)
+![Screenshot](/screenshots/monsoon-mesa.png)
+
+### Monster Mash
+
+![Screenshot](/screenshots/monster-mash.png)
+
+### Moonfly
+
+![Screenshot](/screenshots/moonfly.png)
+
+### Motel Vacancy
+
+![Screenshot](/screenshots/motel-vacancy.png)
+
+### Moving Signals
+
+![Screenshot](/screenshots/moving-signals.png)
+
+### N0Tch2K
+
+![Screenshot](/screenshots/n0tch2k.png)
+
+### Nachtschicht
+
+![Screenshot](/screenshots/nachtschicht.png)
+
+### Nebula Drift
+
+![Screenshot](/screenshots/nebula-drift.png)
 
 ### Neobones Dark
 
-![Screenshot](screenshots/neobones_dark.png)
+![Screenshot](/screenshots/neobones-dark.png)
 
-### Neobones Light
+### Neon Analog
 
-![Screenshot](screenshots/neobones_light.png)
+![Screenshot](/screenshots/neon-analog.png)
+
+### Neon Purple
+
+![Screenshot](/screenshots/neon-purple.png)
 
 ### Neon
 
-![Screenshot](screenshots/neon.png)
+![Screenshot](/screenshots/neon.png)
 
 ### Neopolitan
 
-![Screenshot](screenshots/neopolitan.png)
+![Screenshot](/screenshots/neopolitan.png)
 
 ### Neutron
 
-![Screenshot](screenshots/neutron.png)
+![Screenshot](/screenshots/neutron.png)
 
-### Nightfox
+### Night Lion V1
 
-![Screenshot](screenshots/nightfox.png)
+![Screenshot](/screenshots/night-lion-v1.png)
 
-### NightLion v1
+### Night Lion V2
 
-![Screenshot](screenshots/nightlion_v1.png)
-
-### NightLion v2
-
-![Screenshot](screenshots/nightlion_v2.png)
+![Screenshot](/screenshots/night-lion-v2.png)
 
 ### Night Owl
 
-![Screenshot](screenshots/night_owl.png)
+![Screenshot](/screenshots/night-owl.png)
 
-### Night Owlish Light
+### Night Pharmacy
 
-![Screenshot](screenshots/night_owlish_light.png)
+![Screenshot](/screenshots/night-pharmacy.png)
+
+### Nightfall
+
+![Screenshot](/screenshots/nightfall.png)
+
+### Nightfox
+
+![Screenshot](/screenshots/nightfox.png)
 
 ### Niji
 
-![Screenshot](screenshots/niji.png)
+![Screenshot](/screenshots/niji.png)
 
-### Novel
+### No Clown Fiesta
 
-![Screenshot](screenshots/novel.png)
+![Screenshot](/screenshots/no-clown-fiesta.png)
+
+### Noctis Azureus
+
+![Screenshot](/screenshots/noctis-azureus.png)
+
+### Noctis Bordo
+
+![Screenshot](/screenshots/noctis-bordo.png)
+
+### Noctis Minimus
+
+![Screenshot](/screenshots/noctis-minimus.png)
+
+### Noctis Obscuro
+
+![Screenshot](/screenshots/noctis-obscuro.png)
+
+### Noctis Sereno
+
+![Screenshot](/screenshots/noctis-sereno.png)
+
+### Noctis Uva
+
+![Screenshot](/screenshots/noctis-uva.png)
+
+### Noctis Viola
+
+![Screenshot](/screenshots/noctis-viola.png)
+
+### Noctis
+
+![Screenshot](/screenshots/noctis.png)
 
 ### Nocturnal Winter
 
-![Screenshot](screenshots/nocturnal_winter.png)
+![Screenshot](/screenshots/nocturnal-winter.png)
+
+### Nord Wave
+
+![Screenshot](/screenshots/nord-wave.png)
 
 ### Nord
 
-![Screenshot](screenshots/nord.png)
+![Screenshot](/screenshots/nord.png)
 
-### Nord-light
+### Nordfox
 
-![Screenshot](screenshots/nord_light.png)
+![Screenshot](/screenshots/nordfox.png)
 
-### Nord-wave
+### Northstar
 
-![Screenshot](screenshots/nord-wave.png)
+![Screenshot](/screenshots/northstar.png)
 
-### NvimDark
+### novmbr
 
-![Screenshot](screenshots/NvimDark.png)
+![Screenshot](/screenshots/novmbr.png)
 
-### NvimLight
+### Numbers Station
 
-![Screenshot](screenshots/NvimLight.png)
+![Screenshot](/screenshots/numbers-station.png)
+
+### Nvim Dark
+
+![Screenshot](/screenshots/nvim-dark.png)
 
 ### Obsidian
 
-![Screenshot](screenshots/obsidian.png)
+![Screenshot](/screenshots/obsidian.png)
+
+### Obsurdian
+
+![Screenshot](/screenshots/obsurdian.png)
 
 ### Ocean
 
-![Screenshot](screenshots/ocean.png)
+![Screenshot](/screenshots/ocean.png)
 
-### OceanicMaterial
+### Oceanic Material
 
-![Screenshot](screenshots/oceanic_material.png)
+![Screenshot](/screenshots/oceanic-material.png)
 
 ### Oceanic Next
 
-![Screenshot](screenshots/oceanic_next.png)
+![Screenshot](/screenshots/oceanic-next.png)
+
+### Ocotillo
+
+![Screenshot](/screenshots/ocotillo.png)
 
 ### Ollie
 
-![Screenshot](screenshots/ollie.png)
+![Screenshot](/screenshots/ollie.png)
+
+### One Dark Two
+
+![Screenshot](/screenshots/one-dark-two.png)
 
 ### One Double Dark
 
-![Screenshot](screenshots/one_double_dark.png)
-
-### One Double Light
-
-![Screenshot](screenshots/one_double_light.png)
+![Screenshot](/screenshots/one-double-dark.png)
 
 ### One Half Dark
 
-![Screenshot](screenshots/onehalfdark.png)
+![Screenshot](/screenshots/one-half-dark.png)
 
-### One Half Light
+### Onenord
 
-![Screenshot](screenshots/onehalflight.png)
+![Screenshot](/screenshots/onenord.png)
+
+### Opaline
+
+![Screenshot](/screenshots/opaline.png)
 
 ### Operator Mono Dark
 
-![Screenshot](screenshots/operator_mono_dark.png)
+![Screenshot](/screenshots/operator-mono-dark.png)
+
+### Outrun Electric
+
+![Screenshot](/screenshots/outrun-electric.png)
 
 ### Overnight Slumber
 
-![Screenshot](screenshots/overnight_slumber.png)
+![Screenshot](/screenshots/overnight-slumber.png)
+
+### owl
+
+![Screenshot](/screenshots/owl.png)
+
+### Oxblood
+
+![Screenshot](/screenshots/oxblood.png)
+
+### Oxide
+
+![Screenshot](/screenshots/oxide.png)
 
 ### Oxocarbon
 
-![Screenshot](screenshots/oxocarbon.png)
+![Screenshot](/screenshots/oxocarbon.png)
 
-### Palenight High Contrast
+### Ozz's Blizzard
 
-![Screenshot](screenshots/PaleNightHC.png)
+![Screenshot](/screenshots/ozzs-blizzard.png)
+
+### Painted Desert
+
+![Screenshot](/screenshots/painted-desert.png)
+
+### Pale Night Hc
+
+![Screenshot](/screenshots/pale-night-hc.png)
 
 ### Pandora
 
-![Screenshot](screenshots/pandora.png)
+![Screenshot](/screenshots/pandora.png)
 
 ### Paraiso Dark
 
-![Screenshot](screenshots/paraiso_dark.png)
+![Screenshot](/screenshots/paraiso-dark.png)
 
-### PaulMillr
+### Paranoid Circuit
 
-![Screenshot](screenshots/paul_millr.png)
+![Screenshot](/screenshots/paranoid-circuit.png)
+
+### Patina Dark Soft
+
+![Screenshot](/screenshots/patina-dark-soft.png)
+
+### Patina Dark
+
+![Screenshot](/screenshots/patina-dark.png)
+
+### Patina Moss
+
+![Screenshot](/screenshots/patina-moss.png)
+
+### Patina
+
+![Screenshot](/screenshots/patina.png)
+
+### Paul Millr
+
+![Screenshot](/screenshots/paul-millr.png)
 
 ### Pencil Dark
 
-![Screenshot](screenshots/pencil_dark.png)
-
-### Pencil Light
-
-![Screenshot](screenshots/pencil_light.png)
+![Screenshot](/screenshots/pencil-dark.png)
 
 ### Peppermint
 
-![Screenshot](screenshots/peppermint.png)
+![Screenshot](/screenshots/peppermint.png)
+
+### Petrified
+
+![Screenshot](/screenshots/petrified.png)
 
 ### Phala Green Dark
 
-![Screenshot](screenshots/phala_green_dark.png)
+![Screenshot](/screenshots/phala-green-dark.png)
 
-### Piatto Light
+### Pharaoh's Voltage
 
-![Screenshot](screenshots/piatto_light.png)
+![Screenshot](/screenshots/pharaohs-voltage.png)
+
+### Pierre Dark
+
+![Screenshot](/screenshots/pierre-dark.png)
+
+### Pissed Off Pancakes
+
+![Screenshot](/screenshots/pissed-off-pancakes.png)
 
 ### Pnevma
 
-![Screenshot](screenshots/pnevma.png)
+![Screenshot](/screenshots/pnevma.png)
 
-### Popping and Locking
+### Poimandres Darker
 
-![Screenshot](screenshots/popping_and_locking.png)
+![Screenshot](/screenshots/poimandres-darker.png)
 
-### Primary
+### Poimandres Storm
 
-![Screenshot](screenshots/primary.png)
+![Screenshot](/screenshots/poimandres-storm.png)
+
+### Poimandres
+
+![Screenshot](/screenshots/poimandres.png)
+
+### Poison Apple
+
+![Screenshot](/screenshots/poison-apple.png)
+
+### Poltergeist
+
+![Screenshot](/screenshots/poltergeist.png)
+
+### Popping And Locking
+
+![Screenshot](/screenshots/popping-and-locking.png)
+
+### Possessed Toaster
+
+![Screenshot](/screenshots/possessed-toaster.png)
+
+### Powershell
+
+![Screenshot](/screenshots/powershell.png)
+
+### Prickly Pear
+
+![Screenshot](/screenshots/prickly-pear.png)
+
+### Prince of Barkness
+
+![Screenshot](/screenshots/prince-of-barkness.png)
+
+### Prince of Darkness
+
+![Screenshot](/screenshots/prince-of-darkness.png)
+
+### Prism
+
+![Screenshot](/screenshots/prism.png)
+
+### Prismatica
+
+![Screenshot](/screenshots/prismatica.png)
 
 ### Pro
 
-![Screenshot](screenshots/pro.png)
+![Screenshot](/screenshots/pro.png)
 
-### Pro Light
+### Pueblo Night
 
-![Screenshot](screenshots/pro_light.png)
+![Screenshot](/screenshots/pueblo-night.png)
 
-### Purple Peter
+### Pumpkin Patch
 
-![Screenshot](screenshots/purplepeter.png)
+![Screenshot](/screenshots/pumpkin-patch.png)
+
+### Pumpkin Spice
+
+![Screenshot](/screenshots/pumpkin-spice.png)
+
+### Puppet's Master
+
+![Screenshot](/screenshots/puppets-master.png)
+
+### Purple Portal
+
+![Screenshot](/screenshots/purple-portal.png)
 
 ### Purple Rain
 
-![Screenshot](screenshots/purple_rain.png)
+![Screenshot](/screenshots/purple-rain.png)
+
+### Purplepeter
+
+![Screenshot](/screenshots/purplepeter.png)
+
+### Pyrokai
+
+![Screenshot](/screenshots/pyrokai.png)
+
+### RadicalReborn
+
+![Screenshot](/screenshots/radicalreborn.png)
 
 ### Rapture
 
-![Screenshot](screenshots/rapture.png)
+![Screenshot](/screenshots/rapture.png)
 
 ### Raycast Dark
 
-![Screenshot](screenshots/raycast_dark.png)
-
-### Raycast Light
-
-![Screenshot](screenshots/raycast_light.png)
+![Screenshot](/screenshots/raycast-dark.png)
 
 ### Rebecca
 
-![Screenshot](screenshots/rebecca.png)
+![Screenshot](/screenshots/rebecca.png)
 
 ### Red Alert
 
-![Screenshot](screenshots/red_alert.png)
+![Screenshot](/screenshots/red-alert.png)
 
 ### Red Planet
 
-![Screenshot](screenshots/red_planet.png)
+![Screenshot](/screenshots/red-planet.png)
+
+### Red Rock
+
+![Screenshot](/screenshots/red-rock.png)
 
 ### Red Sands
 
-![Screenshot](screenshots/red_sands.png)
+![Screenshot](/screenshots/red-sands.png)
 
 ### Relaxed
 
-![Screenshot](screenshots/relaxed.png)
+![Screenshot](/screenshots/relaxed.png)
+
+### Retro Legends
+
+![Screenshot](/screenshots/retro-legends.png)
 
 ### Retro
 
-![Screenshot](screenshots/retro.png)
+![Screenshot](/screenshots/retro.png)
 
-### RetroLegends
+### Rhoads Insipired
 
-![image](screenshots/RetroLegends.png)
+![Screenshot](/screenshots/rhoads-insipired.png)
+
+### Rhoads Legacy
+
+![Screenshot](/screenshots/rhoads-legacy.png)
+
+### Rhoads RR Black
+
+![Screenshot](/screenshots/rhoads-rr-black.png)
+
+### Rhoads Tribute
+
+![Screenshot](/screenshots/rhoads-tribute.png)
+
+### Ride the Current
+
+![Screenshot](/screenshots/ride-the-current.png)
 
 ### Rippedcasts
 
-![Screenshot](screenshots/rippedcasts.png)
+![Screenshot](/screenshots/rippedcasts.png)
 
-### Rosé Pine
+### Rose Pine Moon
 
-![Screenshot](screenshots/rose-pine.png)
+![Screenshot](/screenshots/rose-pine-moon.png)
 
-### Rosé Pine Dawn
+### Rose Pine
 
-![Screenshot](screenshots/rose-pine-dawn.png)
-
-### Rosé Pine Moon
-
-![Screenshot](screenshots/rose-pine-moon.png)
+![Screenshot](/screenshots/rose-pine.png)
 
 ### Rouge 2
 
-![Screenshot](screenshots/rouge_2.png)
+![Screenshot](/screenshots/rouge-2.png)
 
 ### Royal
 
-![Screenshot](screenshots/royal.png)
+![Screenshot](/screenshots/royal.png)
 
 ### Ryuuko
 
-![Screenshot](screenshots/ryuuko.png)
+![Screenshot](/screenshots/ryuuko.png)
+
+### Saguaro
+
+![Screenshot](/screenshots/saguaro.png)
 
 ### Sakura
 
-![Screenshot](screenshots/sakura.png)
+![Screenshot](/screenshots/sakura.png)
+
+### Salem
+
+![Screenshot](/screenshots/salem.png)
+
+### Scabos Sand
+
+![Screenshot](/screenshots/scabos-sand.png)
 
 ### Scarlet Protocol
 
-![Screenshot](screenshots/scarlet_protocol.png)
+![Screenshot](/screenshots/scarlet-protocol.png)
+
+### Sea Shells
+
+![Screenshot](/screenshots/sea-shells.png)
 
 ### Seafoam Pastel
 
-![Screenshot](screenshots/seafoam_pastel.png)
+![Screenshot](/screenshots/seafoam-pastel.png)
 
-### SeaShells
+### Seance
 
-![Screenshot](screenshots/sea_shells.png)
+![Screenshot](/screenshots/seance.png)
 
-### Seoulbones Dark
+### Sedona
 
-![Screenshot](screenshots/seoulbones_dark.png)
+![Screenshot](/screenshots/sedona.png)
 
-### Seoulbones Light
+### SeedFlip Abyss
 
-![Screenshot](screenshots/seoulbones_light.png)
+![Screenshot](/screenshots/seedflip-abyss.png)
+
+### SeedFlip Canopy
+
+![Screenshot](/screenshots/seedflip-canopy.png)
+
+### SeedFlip Ember
+
+![Screenshot](/screenshots/seedflip-ember.png)
+
+### SeedFlip Inkwell
+
+![Screenshot](/screenshots/seedflip-inkwell.png)
+
+### SeedFlip Nightfall
+
+![Screenshot](/screenshots/seedflip-nightfall.png)
+
+### SeedFlip Phosphor
+
+![Screenshot](/screenshots/seedflip-phosphor.png)
+
+### SeedFlip Pulse
+
+![Screenshot](/screenshots/seedflip-pulse.png)
+
+### SeedFlip Ultraviolet
+
+![Screenshot](/screenshots/seedflip-ultraviolet.png)
+
+### SeedFlip Voltage
+
+![Screenshot](/screenshots/seedflip-voltage.png)
+
+### SeedFlip Wavelength
+
+![Screenshot](/screenshots/seedflip-wavelength.png)
+
+### Selenized Black
+
+![Screenshot](/screenshots/selenized-black.png)
 
 ### Selenized Dark
 
-![Screenshot](screenshots/selenized-dark.png)
+![Screenshot](/screenshots/selenized-dark.png)
 
-### Selenized Light
+### Seoulbones Dark
 
-![Screenshot](screenshots/selenized-light.png)
+![Screenshot](/screenshots/seoulbones-dark.png)
+
+### Sequoia Monochrome Dark
+
+![Screenshot](/screenshots/sequoia-monochrome-dark.png)
+
+### Sequoia Moonlight Dark
+
+![Screenshot](/screenshots/sequoia-moonlight-dark.png)
+
+### Sequoia Retro Dark
+
+![Screenshot](/screenshots/sequoia-retro-dark.png)
+
+### Serendipity Midnight
+
+![Screenshot](/screenshots/serendipity-midnight.png)
+
+### Serendipity Sunset
+
+![Screenshot](/screenshots/serendipity-sunset.png)
 
 ### Seti
 
-![Screenshot](screenshots/seti.png)
+![Screenshot](/screenshots/seti.png)
+
+### Shades Of Purple
+
+![Screenshot](/screenshots/shades-of-purple.png)
 
 ### Shaman
 
-![Screenshot](screenshots/shaman.png)
+![Screenshot](/screenshots/shaman.png)
 
-### Shades-Of-Purple
+### Sierra Gold
 
-![Screenshot](screenshots/ShadesOfPurple.png)
+![Screenshot](/screenshots/sierra-gold.png)
+
+### Signal Ghost
+
+![Screenshot](/screenshots/signal-ghost.png)
+
+### Silent Empire
+
+![Screenshot](/screenshots/silent-empire.png)
+
+### SilkCircuit Glow
+
+![Screenshot](/screenshots/silkcircuit-glow.png)
+
+### SilkCircuit Neon
+
+![Screenshot](/screenshots/silkcircuit-neon.png)
+
+### SilkCircuit Soft
+
+![Screenshot](/screenshots/silkcircuit-soft.png)
+
+### SilkCircuit Vibrant
+
+![Screenshot](/screenshots/silkcircuit-vibrant.png)
 
 ### Slate
 
-![Screenshot](screenshots/slate.png)
+![Screenshot](/screenshots/slate.png)
 
-### SleepyHollow
+### Sleepy Hollow
 
-![Screenshot](screenshots/SleepyHollow.png)
+![Screenshot](/screenshots/sleepy-hollow.png)
+
+### Smoke on the Terminal
+
+![Screenshot](/screenshots/smoke-on-the-terminal.png)
 
 ### Smyck
 
-![Screenshot](screenshots/smyck.png)
+![Screenshot](/screenshots/smyck.png)
 
 ### Snazzy Soft
 
-![Screenshot](screenshots/snazzy_soft.png)
+![Screenshot](/screenshots/snazzy-soft.png)
 
 ### Snazzy
 
-![Screenshot](screenshots/snazzy.png)
+![Screenshot](/screenshots/snazzy.png)
 
-### SoftServer
+### Soft Server
 
-![Screenshot](screenshots/soft_server.png)
+![Screenshot](/screenshots/soft-server.png)
 
-### Solarized Darcula (With background image)
+### Solarized Darcula
 
-![Screenshot](screenshots/solarized_darcula_with_background.png)
-
-### Solarized Darcula (Without background image)
-
-![Screenshot](screenshots/solarized_darcula.png)
-
-### Solarized Dark - Patched
-
-Some applications assume the ANSI color code 8 is a gray color. Solarized treats
-this code as equal to the background. This theme is for people who prefer the
-former. See issues [#59][issue-59], [#62][issue-62], and [#63][issue-63] for
-more information.
-
-![Screenshot](screenshots/solarized_dark_patched.png)
-
-[issue-59]: https://github.com/mbadolato/iTerm2-Color-Schemes/issues/59
-[issue-62]: https://github.com/mbadolato/iTerm2-Color-Schemes/issues/62
-[issue-63]: https://github.com/mbadolato/iTerm2-Color-Schemes/pull/63
+![Screenshot](/screenshots/solarized-darcula.png)
 
 ### Solarized Dark Higher Contrast
 
-![Screenshot](screenshots/solarized_dark_higher_contrast.png)
+![Screenshot](/screenshots/solarized-dark-higher-contrast.png)
+
+### Solarized Dark Patched
+
+![Screenshot](/screenshots/solarized-dark-patched.png)
 
 ### Solarized Osaka Night
 
-![Screenshot](screenshots/solarized-osaka-night.png)
+![Screenshot](/screenshots/solarized-osaka-night.png)
 
 ### Sonokai
 
-![Screenshot](screenshots/sonokai.png)
+![Screenshot](/screenshots/sonokai.png)
 
-### SpaceGray
+### Sonoran Dusk
 
-![Screenshot](screenshots/space_gray.png)
-
-### SpaceGray Bright
-
-![Screenshot](screenshots/spacegray_bright.png)
-
-### SpaceGray Eighties
-
-![Screenshot](screenshots/spacegray_eighties.png)
-
-### SpaceGray Eighties Dull
-
-![Screenshot](screenshots/spacegray_eighties_dull.png)
+![Screenshot](/screenshots/sonoran-dusk.png)
 
 ### Spacedust
 
-![Screenshot](screenshots/spacedust.png)
+![Screenshot](/screenshots/spacedust.png)
+
+### Spacegray Bright
+
+![Screenshot](/screenshots/spacegray-bright.png)
+
+### Spacegray Eighties Dull
+
+![Screenshot](/screenshots/spacegray-eighties-dull.png)
+
+### Spacegray Eighties
+
+![Screenshot](/screenshots/spacegray-eighties.png)
+
+### Spacegray
+
+![Screenshot](/screenshots/spacegray.png)
 
 ### Spiderman
 
-![Screenshot](screenshots/spiderman.png)
-
-### Spring
-
-![Screenshot](screenshots/spring.png)
+![Screenshot](/screenshots/spiderman.png)
 
 ### Square
 
-![Screenshot](screenshots/square.png)
+![Screenshot](/screenshots/square.png)
 
 ### Squirrelsong Dark
 
-![Screenshot](screenshots/squirrelsong_dark.png)
+![Screenshot](/screenshots/squirrelsong-dark.png)
 
 ### Srcery
 
-![Screenshot](screenshots/srcery.png)
+![Screenshot](/screenshots/srcery.png)
+
+### Stairway Skies
+
+![Screenshot](/screenshots/stairway-skies.png)
 
 ### Starlight
 
-![Screenshot](screenshots/starlight.png)
+![Screenshot](/screenshots/starlight.png)
 
 ### Sublette
 
-![Screenshot](screenshots/sublette.png)
+![Screenshot](/screenshots/sublette.png)
 
 ### Subliminal
 
-![Screenshot](screenshots/subliminal.png)
+![Screenshot](/screenshots/subliminal.png)
 
 ### Sugarplum
 
-![Screenshot](screenshots/sugarplum.png)
+![Screenshot](/screenshots/sugarplum.png)
+
+### Sumi Phosphor
+
+![Screenshot](/screenshots/sumi-phosphor.png)
 
 ### Sundried
 
-![Screenshot](screenshots/sundried.png)
+![Screenshot](/screenshots/sundried.png)
+
+### Sunset Copper Relay
+
+![Screenshot](/screenshots/sunset-copper-relay.png)
+
+### Sunset Drive
+
+![Screenshot](/screenshots/sunset-drive.png)
+
+### Sunset Strip
+
+![Screenshot](/screenshots/sunset-strip.png)
+
+### Sweet Emotion
+
+![Screenshot](/screenshots/sweet-emotion.png)
 
 ### Symfonic
 
-![Screenshot](screenshots/symfonic.png)
+![Screenshot](/screenshots/symfonic.png)
 
-### synthwave
+### Syncopation
 
-![Screenshot](screenshots/synthwave.png)
+![Screenshot](/screenshots/syncopation.png)
 
 ### Synthwave Alpha
 
-![Screenshot](screenshots/synthwave_alpha.png)
+![Screenshot](/screenshots/synthwave-alpha.png)
 
 ### Synthwave Everything
 
-![Screenshot](screenshots/synthwave-everything.png)
+![Screenshot](/screenshots/synthwave-everything.png)
 
-### Tango Adapted
+### Synthwave
 
-![Screenshot](screenshots/tango_adapted.png)
+![Screenshot](/screenshots/synthwave.png)
 
-### Tango Half Adapted
+### Tailwind Dark
 
-![Screenshot](screenshots/tango_half_adapted.png)
+![Screenshot](/screenshots/tailwind-dark.png)
 
 ### Tearout
 
-![Screenshot](screenshots/tearout.png)
+![Screenshot](/screenshots/tearout.png)
 
 ### Teerb
 
-![Screenshot](screenshots/teerb.png)
+![Screenshot](/screenshots/teerb.png)
 
 ### Terafox
 
-![Screenshot](screenshots/terafox.png)
+![Screenshot](/screenshots/terafox.png)
 
-### Terminal Basic
+### Terminal Basic Dark
 
-![Screenshot](screenshots/terminal_basic.png)
+![Screenshot](/screenshots/terminal-basic-dark.png)
+
+### Terminal Green 1999
+
+![Screenshot](/screenshots/terminal-green-1999.png)
 
 ### Thayer Bright
 
-![Screenshot](screenshots/thayer_bright.png)
+![Screenshot](/screenshots/thayer-bright.png)
+
+### The Fog
+
+![Screenshot](/screenshots/the-fog.png)
 
 ### The Hulk
 
-![Screenshot](screenshots/the_hulk.png)
+![Screenshot](/screenshots/the-hulk.png)
 
-### Tinacious Design (Dark)
+### Thirteen
 
-![Screenshot](screenshots/tinacious_design_dark.png)
+![Screenshot](/screenshots/thirteen.png)
 
-### Tinacious Design (Light)
+### Tinacious Design Dark
 
-![Screenshot](screenshots/tinacious_design_light.png)
+![Screenshot](/screenshots/tinacious-design-dark.png)
 
-### TokyoNight
+### Token Dark
 
-![Screenshot](screenshots/tokyonight.png)
-
-### TokyoNight Storm
-
-![Screenshot](screenshots/tokyonight-storm.png)
+![Screenshot](/screenshots/token-dark.png)
 
 ### TokyoNight Moon
 
-![Screenshot](screenshots/tokyonight-moon.png)
-
-### TokyoNight Day
-
-![Screenshot](screenshots/tokyonight-day.png)
+![Screenshot](/screenshots/tokyonight-moon.png)
 
 ### TokyoNight Night
 
-![Screenshot](screenshots/tokyonight-night.png)
+![Screenshot](/screenshots/tokyonight-night.png)
 
-### Tomorrow
+### TokyoNight Storm
 
-![Screenshot](screenshots/tomorrow.png)
+![Screenshot](/screenshots/tokyonight-storm.png)
 
-### Tomorrow Night
+### TokyoNight
 
-![Screenshot](screenshots/tomorrow_night.png)
+![Screenshot](/screenshots/tokyonight.png)
 
 ### Tomorrow Night Blue
 
-![Screenshot](screenshots/tomorrow_night_blue.png)
+![Screenshot](/screenshots/tomorrow-night-blue.png)
 
 ### Tomorrow Night Bright
 
-![Screenshot](screenshots/tomorrow_night_bright.png)
-
-### Tomorrow Night Eighties
-
-![Screenshot](screenshots/tomorrow_night_eighties.png)
+![Screenshot](/screenshots/tomorrow-night-bright.png)
 
 ### Tomorrow Night Burns
 
-![Screenshot](screenshots/tomorrow_night_burns.png)
+![Screenshot](/screenshots/tomorrow-night-burns.png)
 
-### ToyChest
+### Tomorrow Night Eighties
 
-![Screenshot](screenshots/toy_chest.png)
+![Screenshot](/screenshots/tomorrow-night-eighties.png)
+
+### Tomorrow Night
+
+![Screenshot](/screenshots/tomorrow-night.png)
+
+### Toy Chest
+
+![Screenshot](/screenshots/toy-chest.png)
+
+### traffic
+
+![Screenshot](/screenshots/traffic.png)
+
+### Trapped in Amber
+
+![Screenshot](/screenshots/trapped-in-amber.png)
 
 ### Treehouse
 
-![Screenshot](screenshots/treehouse.png)
+![Screenshot](/screenshots/treehouse.png)
+
+### Trick or Treat
+
+![Screenshot](/screenshots/trick-or-treat.png)
+
+### Tumbling Stones
+
+![Screenshot](/screenshots/tumbling-stones.png)
+
+### Turquoise Trail
+
+![Screenshot](/screenshots/turquoise-trail.png)
 
 ### Twilight
 
-![Screenshot](screenshots/twilight.png)
+![Screenshot](/screenshots/twilight.png)
 
 ### Ubuntu
 
-![Screenshot](screenshots/ubuntu.png)
+![Screenshot](/screenshots/ubuntu.png)
 
-### UltraViolent
+### Ultra Dark
 
-![Screenshot](screenshots/ultra_violent.png)
+![Screenshot](/screenshots/ultra-dark.png)
 
-### UltraDark
+### Ultra Violent
 
-![Screenshot](screenshots/ultradark.png)
+![Screenshot](/screenshots/ultra-violent.png)
+
+### Unalive 'Em All
+
+![Screenshot](/screenshots/unalive-em-all.png)
+
+### Undead
+
+![Screenshot](/screenshots/undead.png)
 
 ### Under The Sea
 
-![Screenshot](screenshots/under_the_sea.png)
+![Screenshot](/screenshots/under-the-sea.png)
 
-### Unikitty
+### urban
 
-![Screenshot](screenshots/unikitty.png)
+![Screenshot](/screenshots/urban.png)
 
 ### Urple
 
-![Screenshot](screenshots/urple.png)
+![Screenshot](/screenshots/urple.png)
+
+### Vacuum Tube
+
+![Screenshot](/screenshots/vacuum-tube.png)
 
 ### Vague
 
-![Screenshot](screenshots/vague.png)
+![Screenshot](/screenshots/vague.png)
+
+### Vaporwave Sunset
+
+![Screenshot](/screenshots/vaporwave-sunset.png)
 
 ### Vaughn
 
-![Screenshot](screenshots/vaughn.png)
+![Screenshot](/screenshots/vaughn.png)
+
+### Velvet Court
+
+![Screenshot](/screenshots/velvet-court.png)
+
+### Vercel
+
+![Screenshot](/screenshots/vercel.png)
+
+### Verdigris
+
+![Screenshot](/screenshots/verdigris.png)
 
 ### Vesper
 
-![Screenshot](screenshots/vesper.png)
+![Screenshot](/screenshots/vesper.png)
 
-### VibrantInk
+### Vibrant Ink
 
-![Screenshot](screenshots/vibrant_ink.png)
-
-### Vimbones
-
-![Screenshot](screenshots/vimbones.png)
-
-### Violet Light
-
-![Screenshot](screenshots/violet_light.png)
+![Screenshot](/screenshots/vibrant-ink.png)
 
 ### Violet Dark
 
-![Screenshot](screenshots/violet_dark.png)
+![Screenshot](/screenshots/violet-dark.png)
 
-### violite
+### Violite
 
-![Screenshot](screenshots/violite.png)
+![Screenshot](/screenshots/violite.png)
 
-### WarmNeon
+### Warm Burnout Dark
 
-![Screenshot](screenshots/warm_neon.png)
+![Screenshot](/screenshots/warm-burnout-dark.png)
+
+### Warm Neon
+
+![Screenshot](/screenshots/warm-neon.png)
 
 ### Wez
 
-![Screenshot](screenshots/wez.png)
+![Screenshot](/screenshots/wez.png)
 
 ### Whimsy
 
-![Screenshot](screenshots/whimsy.png)
+![Screenshot](/screenshots/whimsy.png)
 
-### WildCherry
+### Wild Cherry
 
-![Screenshot](screenshots/wild_cherry.png)
+![Screenshot](/screenshots/wild-cherry.png)
 
 ### Wilmersdorf
 
-![Screenshot](screenshots/wilmersdorf.png)
+![Screenshot](/screenshots/wilmersdorf.png)
+
+### Witches' Brew
+
+![Screenshot](/screenshots/witches-brew.png)
+
+### Witching Hour
+
+![Screenshot](/screenshots/witching-hour.png)
 
 ### Wombat
 
-![Screenshot](screenshots/wombat.png)
+![Screenshot](/screenshots/wombat.png)
 
 ### Wryan
 
-![Screenshot](screenshots/wryan.png)
+![Screenshot](/screenshots/wryan.png)
 
-### Xcode dark
+### X Berlin
 
-![Screenshot](screenshots/xcodedark.png)
+![Screenshot](/screenshots/x-berlin.png)
 
-### Xcode dark (High Contrast)
+### X Bogota
 
-![Screenshot](screenshots/xcodedarkhc.png)
+![Screenshot](/screenshots/x-bogota.png)
 
-### Xcode light
+### X Lahabana
 
-![Screenshot](screenshots/xcodelight.png)
+![Screenshot](/screenshots/x-lahabana.png)
 
-### Xcode light (High Contrast)
+### X Miami
 
-![Screenshot](screenshots/xcodelighthc.png)
+![Screenshot](/screenshots/x-miami.png)
+
+### X Oslo
+
+![Screenshot](/screenshots/x-oslo.png)
+
+### X Paris
+
+![Screenshot](/screenshots/x-paris.png)
+
+### X Praha
+
+![Screenshot](/screenshots/x-praha.png)
+
+### X Tokio
+
+![Screenshot](/screenshots/x-tokio.png)
+
+### X
+
+![Screenshot](/screenshots/x.png)
+
+### Xcode Dark hc
+
+![Screenshot](/screenshots/xcode-dark-hc.png)
+
+### Xcode Dark
+
+![Screenshot](/screenshots/xcode-dark.png)
 
 ### Xcode WWDC
 
-![Screenshot](screenshots/xcodewwdc.png)
+![Screenshot](/screenshots/xcode-wwdc.png)
 
-### Zenbones
+### Zacess Dark
 
-![Screenshot](screenshots/zenbones.png)
+![Screenshot](/screenshots/zacess-dark.png)
+
+### Zacess Yellow on Black
+
+![Screenshot](/screenshots/zacess-yellow-on-black.png)
 
 ### Zenbones Dark
 
-![Screenshot](screenshots/zenbones_dark.png)
-
-### Zenbones Light
-
-![Screenshot](screenshots/zenbones_light.png)
+![Screenshot](/screenshots/zenbones-dark.png)
 
 ### Zenburn
 
-![Screenshot](screenshots/zenburn.png)
+![Screenshot](/screenshots/zenburn.png)
 
 ### Zenburned
 
-![Screenshot](screenshots/zenburned.png)
+![Screenshot](/screenshots/zenburned.png)
 
 ### Zenwritten Dark
 
-![Screenshot](screenshots/zenwritten_dark.png)
+![Screenshot](/screenshots/zenwritten-dark.png)
+
+### Light Themes<a name="lightthemes"><a/>
+
+### 3024 Day
+
+![Screenshot](/screenshots/3024-day.png)
+
+### Adwaita
+
+![Screenshot](/screenshots/adwaita.png)
+
+### Afterimage
+
+![Screenshot](/screenshots/afterimage.png)
+
+### Aizen Light
+
+![Screenshot](/screenshots/aizen-light.png)
+
+### Alabaster
+
+![Screenshot](/screenshots/alabaster.png)
+
+### Analyzed Light
+
+![Screenshot](/screenshots/analyzed-light.png)
+
+### Apple System Colors Light
+
+![Screenshot](/screenshots/apple-system-colors-light.png)
+
+### Atom One Light
+
+![Screenshot](/screenshots/atom-one-light.png)
+
+### Aubade
+
+![Screenshot](/screenshots/aubade.png)
+
+### Ayu Light
+
+![Screenshot](/screenshots/ayu-light.png)
+
+### Belafonte Day
+
+![Screenshot](/screenshots/belafonte-day.png)
+
+### Blueprint
+
+![Screenshot](/screenshots/blueprint.png)
+
+### Bluloco Light
+
+![Screenshot](/screenshots/bluloco-light.png)
+
+### Bone Yard
+
+![Screenshot](/screenshots/bone-yard.png)
+
+### Breadog
+
+![Screenshot](/screenshots/breadog.png)
+
+### Builtin Light
+
+![Screenshot](/screenshots/builtin-light.png)
+
+### Builtin Tango Light
+
+![Screenshot](/screenshots/builtin-tango-light.png)
+
+### Cactus Bloom
+
+![Screenshot](/screenshots/cactus-bloom.png)
+
+### Candy Corn
+
+![Screenshot](/screenshots/candy-corn.png)
+
+### Carbon Paper
+
+![Screenshot](/screenshots/carbon-paper.png)
+
+### Cassette Tape
+
+![Screenshot](/screenshots/cassette-tape.png)
+
+### Catppuccin Latte
+
+![Screenshot](/screenshots/catppuccin-latte.png)
+
+### Claude Light
+
+![Screenshot](/screenshots/claude-light.png)
+
+### Claude
+
+![Screenshot](/screenshots/claude.png)
+
+### Clear Light
+
+![Screenshot](/screenshots/clear-light.png)
+
+### CLRS
+
+![Screenshot](/screenshots/clrs.png)
+
+### Coffee Theme
+
+![Screenshot](/screenshots/coffee-theme.png)
+
+### Cold Storage
+
+![Screenshot](/screenshots/cold-storage.png)
+
+### Cursor Light
+
+![Screenshot](/screenshots/cursor-light.png)
+
+### datum (light)
+
+![Screenshot](/screenshots/datum-light.png)
+
+### Dawnfox
+
+![Screenshot](/screenshots/dawnfox.png)
+
+### Daybreak
+
+![Screenshot](/screenshots/daybreak.png)
+
+### Daybreaker
+
+![Screenshot](/screenshots/daybreaker.png)
+
+### Dayfox
+
+![Screenshot](/screenshots/dayfox.png)
+
+### Desert Morning
+
+![Screenshot](/screenshots/desert-morning.png)
+
+### Earl Grey
+
+![Screenshot](/screenshots/earl-grey.png)
+
+### Electron Highlighter Day
+
+![Screenshot](/screenshots/electron-highlighter-day.png)
+
+### Everforest Light Hard
+
+![Screenshot](/screenshots/everforest-light-hard.png)
+
+### Everforest Light Med
+
+![Screenshot](/screenshots/everforest-light-med.png)
+
+### Everforest Light Soft
+
+![Screenshot](/screenshots/everforest-light-soft.png)
+
+### Farmhouse Light
+
+![Screenshot](/screenshots/farmhouse-light.png)
+
+### Flexoki Light
+
+![Screenshot](/screenshots/flexoki-light.png)
+
+### Frostbyte
+
+![Screenshot](/screenshots/frostbyte.png)
+
+### Frostline
+
+![Screenshot](/screenshots/frostline.png)
+
+### GitHub Light Colorblind
+
+![Screenshot](/screenshots/github-light-colorblind.png)
+
+### GitHub Light Default
+
+![Screenshot](/screenshots/github-light-default.png)
+
+### GitHub Light High Contrast
+
+![Screenshot](/screenshots/github-light-high-contrast.png)
+
+### GitHub
+
+![Screenshot](/screenshots/github.png)
+
+### GitLab Light
+
+![Screenshot](/screenshots/gitlab-light.png)
+
+### Golden Mischief
+
+![Screenshot](/screenshots/golden-mischief.png)
+
+### Golden Retriever Cream
+
+![Screenshot](/screenshots/golden-retriever-cream.png)
+
+### Golden Retriever Honey
+
+![Screenshot](/screenshots/golden-retriever-honey.png)
+
+### Golden Retriever Red
+
+![Screenshot](/screenshots/golden-retriever-red.png)
+
+### Great Pumpkin
+
+![Screenshot](/screenshots/great-pumpkin.png)
+
+### Grok Day
+
+![Screenshot](/screenshots/grok-day.png)
+
+### Gruvbox Light Hard
+
+![Screenshot](/screenshots/gruvbox-light-hard.png)
+
+### Gruvbox Light
+
+![Screenshot](/screenshots/gruvbox-light.png)
+
+### Gruvbox Material Light
+
+![Screenshot](/screenshots/gruvbox-material-light.png)
+
+### Havn Daggry
+
+![Screenshot](/screenshots/havn-daggry.png)
+
+### High Desert Snow
+
+![Screenshot](/screenshots/high-desert-snow.png)
+
+### Horizon Bright
+
+![Screenshot](/screenshots/horizon-bright.png)
+
+### Horizons
+
+![Screenshot](/screenshots/horizons.png)
+
+### Hot Dog Stand (Mustard)
+
+![Screenshot](/screenshots/hot-dog-stand-mustard.png)
+
+### Iceberg Light
+
+![Screenshot](/screenshots/iceberg-light.png)
+
+### Icy Glacier
+
+![Screenshot](/screenshots/icy-glacier.png)
+
+### iglass Light
+
+![Screenshot](/screenshots/iglass-light.png)
+
+### Isocon Light
+
+![Screenshot](/screenshots/isocon-light.png)
+
+### iTerm2 Light Background
+
+![Screenshot](/screenshots/iterm2-light-background.png)
+
+### iTerm2 Solarized Light
+
+![Screenshot](/screenshots/iterm2-solarized-light.png)
+
+### iTerm2 Tango Light
+
+![Screenshot](/screenshots/iterm2-tango-light.png)
+
+### JetCalm Light
+
+![Screenshot](/screenshots/jetcalm-light.png)
+
+### Kanagawa Lotus
+
+![Screenshot](/screenshots/kanagawa-lotus.png)
+
+### Kanso Pearl
+
+![Screenshot](/screenshots/kanso-pearl.png)
+
+### Karasu Snow
+
+![Screenshot](/screenshots/karasu-snow.png)
+
+### Karma Light Dimmed
+
+![Screenshot](/screenshots/karma-light-dimmed.png)
+
+### Karma Light HC
+
+![Screenshot](/screenshots/karma-light-hc.png)
+
+### Karma Light
+
+![Screenshot](/screenshots/karma-light.png)
+
+### Letterpress
+
+![Screenshot](/screenshots/letterpress.png)
+
+### Light 2026
+
+![Screenshot](/screenshots/light-2026.png)
+
+### Light Owl
+
+![Screenshot](/screenshots/light-owl.png)
+
+### Lit Cell Light
+
+![Screenshot](/screenshots/lit-cell-light.png)
+
+### London Columbia Road
+
+![Screenshot](/screenshots/london-columbia-road.png)
+
+### Lunar Dust
+
+![Screenshot](/screenshots/lunar-dust.png)
+
+### Man Page
+
+![Screenshot](/screenshots/man-page.png)
+
+### Matcha Zen
+
+![Screenshot](/screenshots/matcha-zen.png)
+
+### Material
+
+![Screenshot](/screenshots/material.png)
+
+### Melange Light
+
+![Screenshot](/screenshots/melange-light.png)
+
+### Modus Operandi Deuteranopia
+
+![Screenshot](/screenshots/modus-operandi-deuteranopia.png)
+
+### Modus Operandi Tinted
+
+![Screenshot](/screenshots/modus-operandi-tinted.png)
+
+### Modus Operandi Tritanopia
+
+![Screenshot](/screenshots/modus-operandi-tritanopia.png)
+
+### Modus Operandi
+
+![Screenshot](/screenshots/modus-operandi.png)
+
+### Monokai Pro Light Sun
+
+![Screenshot](/screenshots/monokai-pro-light-sun.png)
+
+### Monokai Pro Light
+
+![Screenshot](/screenshots/monokai-pro-light.png)
+
+### Monospace Light
+
+![Screenshot](/screenshots/monospace-light.png)
+
+### Moonwalk
+
+![Screenshot](/screenshots/moonwalk.png)
+
+### Neobones Light
+
+![Screenshot](/screenshots/neobones-light.png)
+
+### Night Owlish Light
+
+![Screenshot](/screenshots/night-owlish-light.png)
+
+### No Clown Fiesta Light
+
+![Screenshot](/screenshots/no-clown-fiesta-light.png)
+
+### Noctis Hibernus
+
+![Screenshot](/screenshots/noctis-hibernus.png)
+
+### Noctis Lilac
+
+![Screenshot](/screenshots/noctis-lilac.png)
+
+### Noctis Lux
+
+![Screenshot](/screenshots/noctis-lux.png)
+
+### Nord Light
+
+![Screenshot](/screenshots/nord-light.png)
+
+### Novel
+
+![Screenshot](/screenshots/novel.png)
+
+### Nvim Light
+
+![Screenshot](/screenshots/nvim-light.png)
+
+### One Double Light
+
+![Screenshot](/screenshots/one-double-light.png)
+
+### One Half Light
+
+![Screenshot](/screenshots/one-half-light.png)
+
+### Onenord Light
+
+![Screenshot](/screenshots/onenord-light.png)
+
+### Paper Tiger
+
+![Screenshot](/screenshots/paper-tiger.png)
+
+### Parchment
+
+![Screenshot](/screenshots/parchment.png)
+
+### Patina Lichen
+
+![Screenshot](/screenshots/patina-lichen.png)
+
+### Patina Light
+
+![Screenshot](/screenshots/patina-light.png)
+
+### Patina Stellar
+
+![Screenshot](/screenshots/patina-stellar.png)
+
+### Pencil Light
+
+![Screenshot](/screenshots/pencil-light.png)
+
+### Piatto Light
+
+![Screenshot](/screenshots/piatto-light.png)
+
+### Pierre Light
+
+![Screenshot](/screenshots/pierre-light.png)
+
+### Poimandres White
+
+![Screenshot](/screenshots/poimandres-white.png)
+
+### Porcelain
+
+![Screenshot](/screenshots/porcelain.png)
+
+### Primary
+
+![Screenshot](/screenshots/primary.png)
+
+### Pro Light
+
+![Screenshot](/screenshots/pro-light.png)
+
+### Pyrokai Light
+
+![Screenshot](/screenshots/pyrokai-light.png)
+
+### Raycast Light
+
+![Screenshot](/screenshots/raycast-light.png)
+
+### Redacted
+
+![Screenshot](/screenshots/redacted.png)
+
+### Rhoads Concord
+
+![Screenshot](/screenshots/rhoads-concord.png)
+
+### Rhoads LP
+
+![Screenshot](/screenshots/rhoads-lp.png)
+
+### Rose Pine Dawn
+
+![Screenshot](/screenshots/rose-pine-dawn.png)
+
+### Royal Rhapsody
+
+![Screenshot](/screenshots/royal-rhapsody.png)
+
+### Safety Glass
+
+![Screenshot](/screenshots/safety-glass.png)
+
+### Sandstone Classic
+
+![Screenshot](/screenshots/sandstone-classic.png)
+
+### Sandstone Ink
+
+![Screenshot](/screenshots/sandstone-ink.png)
+
+### Sandstone Warm
+
+![Screenshot](/screenshots/sandstone-warm.png)
+
+### Sauber
+
+![Screenshot](/screenshots/sauber.png)
+
+### SeedFlip Amethyst
+
+![Screenshot](/screenshots/seedflip-amethyst.png)
+
+### SeedFlip Carbon
+
+![Screenshot](/screenshots/seedflip-carbon.png)
+
+### SeedFlip Coral
+
+![Screenshot](/screenshots/seedflip-coral.png)
+
+### SeedFlip Glacier
+
+![Screenshot](/screenshots/seedflip-glacier.png)
+
+### SeedFlip Ivory
+
+![Screenshot](/screenshots/seedflip-ivory.png)
+
+### Selenized Light
+
+![Screenshot](/screenshots/selenized-light.png)
+
+### Seoulbones Light
+
+![Screenshot](/screenshots/seoulbones-light.png)
+
+### Sequoia Monochrome Light
+
+![Screenshot](/screenshots/sequoia-monochrome-light.png)
+
+### Sequoia Moonlight Light
+
+![Screenshot](/screenshots/sequoia-moonlight-light.png)
+
+### Sequoia Retro Light
+
+![Screenshot](/screenshots/sequoia-retro-light.png)
+
+### Serendipity Morning
+
+![Screenshot](/screenshots/serendipity-morning.png)
+
+### Shokunin
+
+![Screenshot](/screenshots/shokunin.png)
+
+### SilkCircuit Dawn
+
+![Screenshot](/screenshots/silkcircuit-dawn.png)
+
+### Solar Flare
+
+![Screenshot](/screenshots/solar-flare.png)
+
+### Spring
+
+![Screenshot](/screenshots/spring.png)
+
+### Springfield Resident Hight Contrast
+
+![Screenshot](/screenshots/springfield-resident-hight-contrast.png)
+
+### Springfield Resident
+
+![Screenshot](/screenshots/springfield-resident.png)
+
+### Squintless
+
+![Screenshot](/screenshots/squintless.png)
+
+### Stardust Voltage
+
+![Screenshot](/screenshots/stardust-voltage.png)
+
+### Static Memory
+
+![Screenshot](/screenshots/static-memory.png)
+
+### Sumi Linen
+
+![Screenshot](/screenshots/sumi-linen.png)
+
+### Sun Bleached
+
+![Screenshot](/screenshots/sun-bleached.png)
+
+### Tailwind Light
+
+![Screenshot](/screenshots/tailwind-light.png)
+
+### Tango Adapted
+
+![Screenshot](/screenshots/tango-adapted.png)
+
+### Tango Half Adapted
+
+![Screenshot](/screenshots/tango-half-adapted.png)
+
+### Terminal Basic
+
+![Screenshot](/screenshots/terminal-basic.png)
+
+### Thermal Receipt
+
+![Screenshot](/screenshots/thermal-receipt.png)
+
+### Tinacious Design Light
+
+![Screenshot](/screenshots/tinacious-design-light.png)
+
+### Token Light
+
+![Screenshot](/screenshots/token-light.png)
+
+### TokyoNight Day
+
+![Screenshot](/screenshots/tokyonight-day.png)
+
+### Tomorrow
+
+![Screenshot](/screenshots/tomorrow.png)
+
+### Unikitty
+
+![Screenshot](/screenshots/unikitty.png)
+
+### Vimbones
+
+![Screenshot](/screenshots/vimbones.png)
+
+### Violet Light
+
+![Screenshot](/screenshots/violet-light.png)
+
+### Warm Burnout Light
+
+![Screenshot](/screenshots/warm-burnout-light.png)
+
+### White Sands
+
+![Screenshot](/screenshots/white-sands.png)
+
+### Willow Grove
+
+![Screenshot](/screenshots/willow-grove.png)
+
+### X Helsinki
+
+![Screenshot](/screenshots/x-helsinki.png)
+
+### X London
+
+![Screenshot](/screenshots/x-london.png)
+
+### X Madrid
+
+![Screenshot](/screenshots/x-madrid.png)
+
+### Xcode Light hc
+
+![Screenshot](/screenshots/xcode-light-hc.png)
+
+### Xcode Light
+
+![Screenshot](/screenshots/xcode-light.png)
+
+### Y2K Chrome
+
+![Screenshot](/screenshots/y2k-chrome.png)
+
+### Yngwie's Strat
+
+![Screenshot](/screenshots/yngwies-strat.png)
+
+### Zacess Cream
+
+![Screenshot](/screenshots/zacess-cream.png)
+
+### Zacess Light
+
+![Screenshot](/screenshots/zacess-light.png)
+
+### Zenbones Light
+
+![Screenshot](/screenshots/zenbones-light.png)
+
+### Zenbones
+
+![Screenshot](/screenshots/zenbones.png)
 
 ### Zenwritten Light
 
-![Screenshot](screenshots/zenwritten_light.png)
+![Screenshot](/screenshots/zenwritten-light.png)
+<!-- SCREENSHOTS_END -->
 
 ## Credits
 
@@ -2063,7 +3658,21 @@ If you still need a color scheme with .yml, you can get it [here](https://github
 
 ### Ghostty color schemes
 
-Copy the theme content from `ghostty/` and paste the content in your Ghostty config file, at `~/.config/ghostty/config`.
+Copy theme files from `ghostty/` into `~/.config/ghostty/themes/` (or paste the content into your Ghostty config). Set `theme = <file name>` in `~/.config/ghostty/config`.
+
+If Ghostty reports a theme not found after an upgrade, run `ghostty +list-themes` — Ghostty’s **bundled** theme names can change between releases (for example Ghostty 1.2.0). Themes from this repository keep stable file names under `ghostty/`.
+
+### Otty color schemes
+
+Copy `.ottytheme` files from `otty/` into `~/.config/otty/themes/` (Windows: `%APPDATA%\otty\themes\`), then pick the theme in Settings → Appearance → Themes, or set `theme = <slug>` in Otty’s config.
+
+You can also import a file via Settings → Appearance → Import Theme → Otty, double-click an `.ottytheme` in Finder, or:
+
+```sh
+otty import ./otty/0x96f.ottytheme --activate
+```
+
+Otty can also import iTerm2, Kitty, Alacritty, and Ghostty theme files from this repository if you prefer those formats. See [Otty theme docs](https://docs.otty.sh/customization/themes).
 
 ### Rio color schemes
 
@@ -2074,6 +3683,14 @@ Then specify the name of your theme in the `theme` field in the [config file](ht
 
 Copy the theme content from `termux/` and paste the content to `~/.termux` directory as `~/.termux/colors.properties` file and run `termux-reload-settings` to apply the theme.
 
+### Vim color schemes
+
+Copy the theme content from `vim/` and paste the content to `~/.vim/colors/` directory. In Vim, use `:colorscheme <scheme_name>` to apply the colorscheme.
+
+### Ptyxis color schemes
+
+Copy the theme file(s) you want from `ptyxis/` and paste into `~/.local/share/org.gnome.Ptyxis/palettes`, then restart Ptyxis. The new theme(s) should now be available in the global palette list in `Preferences > Appearance > Palette (may need to select 'Show All Palettes')` and `Preferences > Profiles > <profile_name> > Color > Palette`.
+
 ### Generic color schemes
 
 These schemes work with any terminal emulator with support for the OSC 4 escape code (including the Linux console, GNOME Terminal, and more).
@@ -2081,38 +3698,53 @@ These schemes work with any terminal emulator with support for the OSC 4 escape 
 Copy the shell script from `generic/` and paste the script to `~/bin/set-colors.sh`, or wherever you prefer to put shell scripts.
 Then add `bash ~/bin/set-colors.sh` to your shell's config file (`~/.bashrc`, `~/.zshrc`, etc).
 
+For GNOME’s modern terminal (Ptyxis), prefer the dedicated `ptyxis/` palettes instead of OSC scripts.
+
+### Machine-readable schemes (JSONL)
+
+Committed machine-readable sources:
+
+- `yaml/*.yml` — one YAML file per scheme (best for importers / Nix without XML)
+- `windowsterminal/*.json` — Windows Terminal JSON objects
+
+`tools/gen.py` also writes a local `schemes.jsonl` (gitignored): one JSON object per line with the full color map used by screenshot tooling. Run `python tools/gen.py` to regenerate it.
+
 ### Previewing color schemes
 
-[preview.rb](tools/preview.rb) is a simple script that allows you to preview
-the color schemes without having to import them. It parses .itermcolors files
-and applies the colors to the current session using [iTerm's proprietary
-escape codes](https://iterm2.com/documentation-escape-codes.html). As noted in
-the linked page, it doesn't run on tmux or screen.
+[preview_theme.py](tools/preview_theme.py) renders a full visual preview in the
+terminal using inline truecolor escape codes. It does **not** modify your
+terminal palette — safe to run in any truecolor-capable terminal (iTerm2, Kitty,
+WezTerm, Ghostty, Cursor, etc.).
 
 ```sh
-# Apply AdventureTime scheme to the current session
-tools/preview.rb schemes/AdventureTime.itermcolors
+# Preview by scheme name
+python3 tools/preview_theme.py -s "Your Theme Name"
 
-# Apply the schemes in turn.
-# - Press (almost) any key to advance; hit CTRL-C or ESC to stop
-# - Press the delete key to go back
-tools/preview.rb schemes/*
+# Preview from source files
+python3 tools/preview_theme.py schemes/Molokai.itermcolors
+python3 tools/preview_theme.py yaml/Clear Dark.yml
+
+# Browse multiple themes: ← → navigate, q quit
+python3 tools/preview_theme.py -s "Molokai" "Dracula"
 ```
 
-#### Previewing color schemes in other terminal emulators
+The preview shows the ANSI palette, surface colors (foreground, background,
+selection, cursor), and semantic samples (errors, git status, directory listing).
 
-[preview-generic.sh](tools/preview-generic.sh) is a script which can preview
-the themes in any terminal emulator which has support for the OSC 4 escape
-codes. It works by running the shell scripts from the `generic/` directory. 
+#### Live palette preview (mutates terminal colors)
+
+[preview-generic.sh](tools/preview-generic.sh) applies OSC 4 palette changes by
+sourcing shell scripts from `generic/`. Use this only when you want the current
+session recolored.
 
 ```sh
-# Apply AdventureTime scheme to the current session
-bash generic/AdventureTime.sh
-
-# Apply the schemes in turn
-# - Press left/right arrow keys to navigate, press `q` to stop
-./tools/preview-generic.sh generic/*
+bash generic/Molokai.sh
+./tools/preview-generic.sh generic/Molokai.sh generic/Dracula.sh
 ```
+
+[preview.rb](tools/preview.rb) is deprecated (broken on current `.itermcolors`
+files). Prefer `preview_theme.py`.
+
 ---
 
 iTerm Color Schemes | iTerm2 Color Schemes | iTerm 2 Color Schemes | iTerm Themes | iTerm2 Themes | iTerm 2 Themes

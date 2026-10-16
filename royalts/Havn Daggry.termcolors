@@ -69,7 +69,7 @@
     },
     {
       "name": "White",
-      "color": "#d6dbeb",
+      "color": "#b0b5c5",
       "terminalMapping": "ansiWhite"
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "name": "BrightYellow",
-      "color": "#feb234",
+      "color": "#f1a527",
       "terminalMapping": "ansiBrightYellow"
     },
     {

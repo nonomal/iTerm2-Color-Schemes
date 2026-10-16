@@ -12,11 +12,12 @@
 #define Ansi_5_Color #fd5ff1
 #define Ansi_6_Color #86e9fe
 #define Ansi_7_Color #cbcccb
-#define Ansi_8_Color #262626
+#define Ansi_8_Color #404040
 #define Ansi_9_Color #d51d00
 #define Background_Color #000000
 #define Bold_Color #ffffff
 #define Cursor_Color #bbbbbb
+#define Cursor_Guide_Color #bbbbbb
 #define Cursor_Text_Color #ffffff
 #define Foreground_Color #dbdbdb
 #define Selected_Text_Color #000000

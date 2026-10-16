@@ -33,7 +33,7 @@ put_template 4  "00/71/cf"
 put_template 5  "ff/90/fe"
 put_template 6  "6b/ff/dd"
 put_template 7  "f1/f1/f1"
-put_template 8  "2e/2e/2e"
+put_template 8  "48/48/48"
 put_template 9  "ff/c4/be"
 put_template 10 "d6/fc/ba"
 put_template 11 "ff/fe/d5"
@@ -53,7 +53,7 @@ if [ -n "$ITERM_SESSION_ID" ]; then
   put_template_custom Pj "454d96"
   put_template_custom Pk "f4f4f4"
   put_template_custom Pl "00ff9c"
-  put_template_custom Pm "ffffff"
+  put_template_custom Pm "a6a6a6"
 else
   put_template_var 10 $color_foreground
   put_template_var 11 $color_background

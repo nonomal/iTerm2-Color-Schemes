@@ -1,7 +1,7 @@
 # Colors (Black Metal (Mayhem))
 
 [colors.bright]
-black = '#333333'
+black = '#404040'
 blue = '#888888'
 cyan = '#aaaaaa'
 green = '#f3ecd4'
@@ -12,7 +12,7 @@ yellow = '#eecc6c'
 
 [colors.cursor]
 cursor = '#c1c1c1'
-text = '#c1c1c1'
+text = '#8e8e8e'
 
 [colors.normal]
 black = '#000000'

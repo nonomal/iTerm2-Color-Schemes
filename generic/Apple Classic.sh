@@ -29,7 +29,7 @@ put_template 0  "00/00/00"
 put_template 1  "c9/1b/00"
 put_template 2  "00/c2/00"
 put_template 3  "c7/c4/00"
-put_template 4  "02/25/c7"
+put_template 4  "1c/3f/e1"
 put_template 5  "ca/30/c7"
 put_template 6  "00/c5/c7"
 put_template 7  "c7/c7/c7"
@@ -53,7 +53,7 @@ if [ -n "$ITERM_SESSION_ID" ]; then
   put_template_custom Pj "6b5b02"
   put_template_custom Pk "67e000"
   put_template_custom Pl "c7c7c7"
-  put_template_custom Pm "ffffff"
+  put_template_custom Pm "8c8c8c"
 else
   put_template_var 10 $color_foreground
   put_template_var 11 $color_background

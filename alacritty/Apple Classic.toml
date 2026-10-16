@@ -12,11 +12,11 @@ yellow = '#fffc67'
 
 [colors.cursor]
 cursor = '#c7c7c7'
-text = '#ffffff'
+text = '#8c8c8c'
 
 [colors.normal]
 black = '#000000'
-blue = '#0225c7'
+blue = '#1c3fe1'
 cyan = '#00c5c7'
 green = '#00c200'
 magenta = '#ca30c7'

@@ -30,15 +30,15 @@ put_template 1  "fc/6d/26"
 put_template 2  "3e/b3/83"
 put_template 3  "fc/a1/21"
 put_template 4  "db/3b/21"
-put_template 5  "38/0d/75"
+put_template 5  "6b/40/a8"
 put_template 6  "6e/49/cb"
 put_template 7  "ff/ff/ff"
-put_template 8  "46/46/46"
+put_template 8  "53/53/53"
 put_template 9  "ff/65/17"
 put_template 10 "53/ea/a8"
 put_template 11 "fc/a0/13"
 put_template 12 "db/50/1f"
-put_template 13 "44/10/90"
+put_template 13 "6a/36/b6"
 put_template 14 "7d/53/e7"
 put_template 15 "ff/ff/ff"
 
@@ -53,7 +53,7 @@ if [ -n "$ITERM_SESSION_ID" ]; then
   put_template_custom Pj "cb392e"
   put_template_custom Pk "ffffff"
   put_template_custom Pl "7f7f7f"
-  put_template_custom Pm "7f7f7f"
+  put_template_custom Pm "b2b2b2"
 else
   put_template_var 10 $color_foreground
   put_template_var 11 $color_background

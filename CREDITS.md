@@ -6,11 +6,18 @@ The 12-bit Rainbow theme was adapted by [xxxserxxx](https://github.com/xxxserxxx
 
 The 3024 Day and 3024 Night themes were created by [0x3024](https://github.com/0x3024)
 
-The Aardvark Blue theme was created by [joshka](https://github.com/joshka)
+The Aardvark Blue and Aardvark Ink themes were created by
+[joshka](https://github.com/joshka)
 
 The Abernathy theme was created by [barish](https://instagram.com/barish)
 
 The Adventure theme was created by [hongzimao](https://github.com/hongzimao/iTerm2-Color-Schemes)
+
+The Keys Ocean Sunset and Keys Ocean Sunset HC themes were created by Grok Build Composer 2.5 Fast as an AI theme generation test — original dark themes inspired by Florida Keys ocean sunsets. Palette colors draw on perceptually sampled Keys sunset photography ([jscarto gist](https://gist.github.com/jscarto/218474b4962a022644c3b05af193a4b3)), Moody Sunset ocean-to-amber gradients, and Florida sunset coral/peach tones.
+
+The Sumi Phosphor and Sumi Linen themes were created by Grok Build Composer 2.5 Fast as a complementary dark/light pair — sumi ink on espresso black with a phosphor-teal signal accent, and sumi typography on unbleached linen.
+
+The Midnight Arcade, Terminal Green 1999, Vaporwave Sunset, CRT Amber, Purple Portal, Y2K Chrome, and Cassette Tape themes were created by [theebest.com](https://www.theebest.com), from its open-source developer theme collection ([TriumphInteractive/theebest-themes](https://github.com/TriumphInteractive/theebest-themes)). The palettes are human-designed; the YAML source files were produced from them with AI assistance.
 
 The themes AdventureTime, AlienBlood, BirdsOfParadise, Ciapre, CrayonPonyFish, DimmedMonokai, Earthsong, Elemental, FishTank, FrontEndDelight, FunForrest, Grape, Highway, IC_Green_PPL, IC_Orange_PPL, Lavandula, Medallion, MonaLisa, Ollie, Royal, SeaShells, Shaman, SleepyHollow, SoftServer, Sundried, ToyChest, Treehouse, and Urple were created by [zdj](https://github.com/zdj/themes/tree/master/iterm2)
 
@@ -68,6 +75,8 @@ The Borland theme was created by [delip](https://gist.github.com/delip/9e16c606d
 
 The Box theme was created by [D3vil0p3r](https://github.com/D3vil0p3r)
 
+The themes branch, novmbr, owl, traffic, and urban were created by [dkeg](https://github.com/dkeg/crayolo).
+
 The Breeze theme was based on [the Breeze color scheme](https://github.com/KDE/konsole/blob/master/data/color-schemes/Breeze.colorscheme) by [KDE](https://kde.org) and ported to iTerm by [nieltg](https://github.com/nieltg)
 
 The Bright Lights theme was created by [tw15egan](https://github.com/tw15egan)
@@ -77,6 +86,8 @@ The Broadcast theme was created by [vinkla](https://github.com/vinkla/broadcast-
 The Calamity and Rapture themes were created by [Pustur](https://github.com/Pustur)
 
 The Catppuccin themes were created by the [Catppuccin](https://github.com/orgs/catppuccin/people) team
+
+The Catthode theme was created by the [Catthode](https://github.com/catthode) project.
 
 The CGA theme was created by [jdhmtl](https://github.com/jdhmtl).
 
@@ -98,11 +109,15 @@ The CobaltNext themes were created by [davidleininger](https://github.com/davidl
 
 The coffee theme was created by [cbitterfield](https://github.com/cbitterfield)
 
+The Cursor Dark and Cursor Light themes are based on the default color schemes of the [Cursor](https://cursor.com) editor
+
 The CutiePro theme was created by [jezzy](https://github.com/jezzy-ultra)
 
 The Cyberpunk theme was created by [Murderlon](https://github.com/Murderlon/cyberpunk-iterm)
 
 The Cyberpunk Scarlet Protocol theme was created by [garrettmroberts](https://github.com/garrettmroberts). It is based on the Scarlet Protocol variation of the [Cyberpunk VsCode theme](https://github.com/prometheux-ar/cyberpunk).
+
+The Dark 2026 theme is VS Code's default dark theme, as its integrated terminal draws it. It was added by [Philip Lindberg](https://github.com/philiplindberg).
 
 The Dark Modern theme was created by [zasdaym](https://github.com/zasdaym). It is based on the default VS Code theme.
 
@@ -118,6 +133,8 @@ The DjangoRebornAgain theme was created by [christopherscott](https://github.com
 
 The DjangoSmoothy theme was created by [Jannis Leidel](https://code.djangoproject.com/wiki/TextMate). The original colors schemes were created by [threespot.com](https://threespot.com) for the Django Software Foundation
 
+The Dogxi Misty theme was created by [Dogxi](https://github.com/dogxii).
+
 The Doom One theme was based on [Emacs Doom default theme](https://github.com/hlissner/emacs-doom-themes)
 
 The Doom Peacock theme was based on [Emacs Doom Peacock theme](https://github.com/hlissner/emacs-doom-themes)
@@ -128,7 +145,11 @@ The DuoTone Dark theme was created by [chibicode](http://chibicode.com) based on
 
 The Dracula theme was created by [zenorocha](https://github.com/zenorocha/dracula-theme)
 
+The Earl Grey theme is based on the [Earl Grey](https://earl-grey.halt.wtf/) color scheme by the [earl-grey-theme](https://github.com/earl-grey-theme/earl-grey) project. That project publishes only a background/foreground/accent palette (no terminal ANSI set), so the 16-color ANSI palette was derived from its published colors for this port.
+
 The Electron Highlighter theme was created by [mikemcbride](https://github.com/mikemcbride)
+
+The Electron Highlighter Day theme was created by [mikemcbride](https://github.com/mikemcbride)
 
 The Elegant theme was created by [lukgri](https://github.com/lukgri)
 
@@ -144,7 +165,15 @@ The Everblush theme was created by [Mangeshrex](https://github.com/Mangeshrex)
 
 The Everforest Dark - Hard theme was found [here](https://github.com/icewind/everforest.iterm2) and ported by [NicolasGB](https://github.com/NicolasGB)
 
+The Everforest Dark - Med theme was found [here](https://github.com/icewind/everforest.iterm2) and ported by [eskultety](https://github.com/eskultety)
+
+The Everforest Dark - Soft theme was found [here](https://github.com/icewind/everforest.iterm2) and ported by [eskultety](https://github.com/eskultety)
+
+The Everforest Light - Hard theme was found [here](https://github.com/icewind/everforest.iterm2) and ported by [eskultety](https://github.com/eskultety)
+
 The Everforest Light - Med theme was found [here](https://github.com/icewind/everforest.iterm2) and ported by [robertjkeller](https://github.com/robertjkeller)
+
+The Everforest Light - Soft theme was found [here](https://github.com/icewind/everforest.iterm2) and ported by [eskultety](https://github.com/eskultety)
 
 The Fahrenheit theme was created by [jonascarpay](https://github.com/jonascarpay) based on [fcpg](https://github.com/fcpg)'s [vim-fahrenheit](https://github.com/fcpg/vim-fahrenheit) Vim theme.
 
@@ -186,6 +215,10 @@ The GitHub Dark theme was created by [Al Duncanson](https://github.com/alDuncans
 
 The GitLab Dark, GitLab Dark Grey, and GitLab Light themes were added by [Antonio Camargo](https://github.com/apcamargo). These themes were converted from the theme created by [albertorestifo](https://github.com/albertorestifo/gitlab-webide-theme) using the [ditto](https://github.com/campvanilla/ditto) tool.
 
+The Gleam and Gleam Classic themes were created by [trag1c](https://github.com/trag1c). Originally designed by [aslilac](https://github.com/aslilac) and [lpil](https://github.com/lpil).
+
+The Grok Day and Grok Night themes come from [promptegrity/grok-themes](https://github.com/promptegrity/grok-themes). The palettes are adapted from [xai-org/grok-build](https://github.com/xai-org/grok-build). [zasdaym](https://github.com/zasdaym) added these themes.
+
 The Gruber Darker theme was inspired by [Alexey Kutepov](https://github.com/rexim)
 
 The Gruvbox Dark theme was created by [morhetz](https://github.com/morhetz) and added by [saccarosium](https://github.com/mcchrish)
@@ -224,6 +257,10 @@ The Horizon and Horizon Bright themes were added by [Antonio Camargo](https://gi
 
 The Hybrid theme was found [here](https://gist.github.com/luan/6362811)
 
+The Hyper theme is the default color palette of the [Hyper](https://github.com/vercel/hyper) terminal by [Vercel](https://github.com/vercel), ported by [Thomas Drake-Brockman](https://github.com/thomasfedb)
+
+The IBM 5153 CGA themes were created by [Jesse Miller](https://jmiller.com/). Based on The IBM 5153's True CGA Palette and Color Output [int10h.org/blog](https://int10h.org/blog/2022/06/ibm-5153-color-true-cga-palette/).
+
 The iceberg theme was created by [cocopon](https://github.com/cocopon/iceberg.vim) and ported to iTerm2 by [pbnj](https://github.com/pbnj)
 
 The scheme idleToes was inspired by the [idleFingers](http://www.idlefingers.co.uk/) TextMate theme and suggested for inclusion by Seth Wilson.
@@ -233,15 +270,25 @@ The IR_Black theme was found [here](https://gist.github.com/meqif/1238378)
 The IRIX Console and IRIX Terminal themes were created, based on screenshots from [CompuHacker/](https://www.reddit.com/user/CompuHacker/) on [Reddit](https://www.reddit.com/r/IRIX/comments/1iohgt4/any_irix_user_able_to_help) by [Skeeve](https://github.com/Skeeve).
 [IRIX](https://en.wikipedia.org/wiki/IRIX) was the operating system of Silicon Graphics Computers.
 
+The Isocon Dark and Isocon Light themes were created by [Ethan Rietz](https://github.com/erietz)
+
 The Japanesque theme was created by [aereal](https://github.com/aereal/dotfiles/blob/master/colors/Japanesque/Japanesque.itermcolors)
 
 The Jellybeans theme was created by [qtpi](https://github.com/qtpi/Jellybeans.itermcolors)
 
 The JetBrains Darcula theme was created by [vitstr](https://github.com/vitstr)
 
+The JetBrains Islands Dark theme was created by [ch1re](https://github.com/bbeny123)
+
 The Jubi theme was created by [Julia Tretel](https://github.com/jutretel)
 
-The Kanagawa themes (Kanagawa Wave & Kanagawa Dragon) were created by [rebelot](https://github.com/rebelot)
+The Kanagawa themes (Kanagawa Wave, Kanagawa Dragon, and Kanagawa Lotus) were created by [rebelot](https://github.com/rebelot) and added by [Jeremy Seago](https://github.com/seagoj) and [Antonio Camargo](https://github.com/apcamargo).
+
+The Karasu Night and Karasu Snow themes were created by [scozu](https://github.com/scozu).
+
+The Karma themes (Karma Dark, Karma Light, Karma Dark HC, Karma Light HC, Karma Dark Dimmed, and Karma Light Dimmed) are based on the [Karma VS Code theme](https://sreetamdas.com/karma) by [Sreetam Das](https://github.com/sreetamdas) and were ported to iTerm2 by [Artur Spatari](https://github.com/aspatari/iterm2-karma).
+
+The Kanso Ink, Kanso Mist, Kanso Zen, and Kanso Pearl themes were created by [webhooked](https://github.com/webhooked) and added by [Antonio Camargo](https://github.com/apcamargo).
 
 The Kolorit theme was created by [thomaspaulmann](https://github.com/thomaspaulmann)
 
@@ -250,6 +297,10 @@ The [Kurokula](https://github.com/Indyandie/kurokula-obsidian-theme) theme was c
 The Lab Fox theme was created by [theatlasroom](https://github.com/theatlasroom) inspired by the [Gitlab design system](https://design.gitlab.com)
 
 The Later This Evening theme was created by [vilhalmer](https://github.com/vilhalmer/System/tree/master/terminal-themes)
+
+The Lemon Graphite theme was created by [ZioFester90](https://github.com/ZioFester90) with AI assistance.
+
+The Light 2026 theme is VS Code's default light theme, as its integrated terminal draws it. It was added by [Philip Lindberg](https://github.com/philiplindberg).
 
 The LightOwl theme was created by [zasdaym](https://github.com/zasdaym)
 
@@ -262,6 +313,8 @@ The Mariana theme was adapted from the [Sublime Text](https://www.sublimetext.co
 The Material and MaterialDark themes were created by [stoeffel](https://github.com/stoeffel/material-iterm)
 
 MaterialDarker and DraculaPlus themes were added by [jos3s](https://github.com/jos3s)
+
+The Dracula+ High Contrast theme is a higher-contrast companion to Dracula+ (original by [jos3s](https://github.com/jos3s)), created by a Cursor agent assisting Mark Badolato for [iTerm2-Color-Schemes #566](https://github.com/mbadolato/iTerm2-Color-Schemes/issues/566). The original Dracula+ palette is left unchanged.
 
 The MaterialOcean theme was found [here](https://github.com/kaicataldo/material.vim/blob/master/terminal-colors/iterm2/material-ocean.itermcolors) and was ported by [fr3fou](https://github.com/fr3fou)
 
@@ -291,13 +344,19 @@ The theme Monokai (Classic, Pro, Machine, Octagon, Ristretto, Spectrum, Light & 
 
 The theme Monokai Soda was found [here](https://github.com/deepsweet/Monokai-Soda-iTerm).
 
+The theme Monokai SublimeText was created by [Howar31](https://github.com/howar31/monokai-sublimetext).
+
 The theme Monokai Vivid was created by [vitalymak](https://github.com/vitalymak/iTerm2-Color-Schemes).
+
+The Monospace Dark and Monospace Light themes were created and added by [conventoangelo](https://github.com/conventoangelo) based on Google's Project IDX theme of the same name.
 
 The theme moonfly was created by [bluz71](https://github.com/bluz71/vim-moonfly-colors)
 
 The theme Neopolitan was created by [daytonn](https://github.com/daytonn/iTerm2-Color-Schemes)
 
 The theme Neon was created by [phosphorcube](https://github.com/phosphorcube/iTerm2-Color-Schemes)
+
+The Neon Purple theme was created by [imcarvalho](https://github.com/imcarvalho/neonpurple)
 
 The Neutron theme was created by [Ch4s3](https://github.com/Ch4s3/iTerm2-Neutron)
 
@@ -327,19 +386,29 @@ The OceanicMaterial theme was created by [rahulpatel](https://github.com/rahulpa
 
 The Oceanic Next theme was created by [mhartington](https://github.com/mhartington/oceanic-next-iterm)
 
+The Moonwalk theme was created by [Jian](https://github.com/thejian)
+
+The One Dark Two theme was created by [beatreichenbach](https://github.com/beatreichenbach/one-dark-two), based on Atom's One Dark with brighter text.
+
 The One Double Dark and One Double Light themes were created by [pamburus](https://github.com/pamburus/one-double), based on One Half and Atom's One, with a visibility fix for the bright black color in the dark variant and altered bright colors in both variants.
 
 The One Half themes were created by [sonph](https://github.com/sonph), based on Atom's One with some tweakings.
 
 The Operator Mono Dark was ported from [vharadkou](https://github.com/vharadkou/OperatorMonoDarkTheme) by [dreamyguy](https://github.com/dreamyguy/iterm-theme-operator-mono-dark)
 
+The Outrun Electric theme was created by [samrap](https://github.com/samrap/outrun-theme-vscode) for VS Code, with the palette values following [ema2159](https://github.com/doomemacs/themes/blob/master/themes/doom-outrun-electric-theme.el)'s Doom Emacs port, and was contributed here by [sawtdakhili](https://github.com/sawtdakhili).
+
 The Overnight Slumber theme was created by [Cristian Velasquez Ramos](https://github.com/cevr/overnight) and ported to iTerm2 by [Gomah](https://github.com/Gomah/overnight-slumber-iterm).
+
+The Oxide theme was created by [jakmaz](https://github.com/jakmaz)
 
 The Oxocarbon theme was created by [Nyoom Engineering](https://github.com/nyoom-engineering) and ported to iTerm2 by [Hanna Rose](https://github.com/hqnna).
 
 The PaleNight theme was created by [Mattia Astorino](https://github.com/equinusocio) and ported to iTerm2 by [Kasper](https://github.com/Kasper-Liu)
 
 The Pandora theme was created by [milosmatic](https://github.com/milosmatic/Pandora-iterm)
+
+The Patina Dark, Dark Soft, Moss, Light, Lichen, and Stellar themes were created by [lmarkmann](https://github.com/lmarkmann)
 
 The PaulMillr theme was created by [paulmillr](https://github.com/paulmillr/dotfiles/tree/master/terminal) and ported to iTerm by me
 
@@ -356,6 +425,8 @@ Popping and Locking theme was created by [Hedinn Eiriksson](https://github.com/h
 The Primary theme was created by [jayanthkoushik](https://github.com/jayanthkoushik) based on [Google's vim colorscheme](https://github.com/google/vim-colorscheme-primary).
 
 The Pro Light theme was adapted from the Pro theme by [crowsonkb](https://github.com/crowsonkb) using her [iterm_schemer](https://github.com/crowsonkb/iterm_schemer) tool.
+
+The Pyrokai and Pyrokai Light themes were created by [Patrick Serrano](https://patrickserrano.com) — Monokai's accent family, warm-shifted, expanded into a Flexoki-shaped tonal system, generated in OKLCH and gamut-mapped to sRGB. Full palette and other app themes at [patrickserrano.github.io/pyrokai](https://patrickserrano.github.io/pyrokai/).
 
 The Purple Peter theme was created by [DeChamp](https://github.com/dechamp)
 
@@ -386,6 +457,10 @@ The themes Selenized Dark and Light were created by [jan-warchol](https://github
 The Seti theme was created by [jesseweed](https://github.com/jesseweed/seti-syntax/) and ported to iTerm2 by [philduffy](https://github.com/willmanduffy/seti-iterm) and slightly modified to make the ANSI blacks have a little more contrast
 
 The Shades Of Purple theme was found [here](https://github.com/ahmadawais/shades-of-purple-iterm2) and ported by [fr3fou](https://github.com/fr3fou)
+
+The Shokunin theme was created by [Maksim Burtsev](https://github.com/Maksim-Burtsev) and is based on the terminal palette from the [Shokunin VS Code theme](https://github.com/Maksim-Burtsev/shokunin-theme)
+
+The SilkCircuit themes (SilkCircuit Neon, SilkCircuit Vibrant, SilkCircuit Soft, SilkCircuit Glow, and SilkCircuit Dawn) were created by [Stefanie Jane](https://github.com/hyperb1iss) as the terminal side of the [SilkCircuit](https://github.com/hyperb1iss/silkcircuit) design system, a single palette shared across Neovim, VS Code, Chrome, and terminals.
 
 The Slate theme was created by [deneshshan](https://github.com/deneshshan)
 
@@ -419,9 +494,13 @@ The theme Subliminal was created by [gdsrosa](https://github.com/gdsrosa/sublimi
 
 The theme Sugarplum was created by [lemonlime0x3C33](https://github.com/lemonlime0x3C33/iTerm2-Color-Schemes-Sugarplum)
 
+The Sunset Drive theme was created by [tahayvr](https://github.com/tahayvr)
+
 The scheme Symfonic was inspired by the color scheme used in the [documentation](http://symfony.com/doc/current/book/index.html) for the [Symfony](http://www.symfony.com) PHP Framework.
 
 The [starlight](https://github.com/CosmicToast/starlight) theme was created by [toast](https://github.com/CosmicToast).
+
+The Squintless theme was created by [Sameer Zahir](https://github.com/sameerzahir97-cloud).
 
 The [Squirrelsong Dark](https://github.com/sapegin/squirrelsong) theme was created by [sapegin](https://github.com/sapegin).
 
@@ -441,11 +520,15 @@ The Thayer Bright theme was found [here](https://github.com/t3chnoboy/thayer-bri
 
 The theme Tinacious Design was created by [Tina Holly](https://tinaciousdesign.com)
 
+The Token Dark and Token Light themes were created by [Thorsten Rhau](https://github.com/ThorstenRhau) from the [Token](https://github.com/ThorstenRhau/token) colorscheme.
+
 The Tokyo Night themes were created by [folke](https://github.com/folke/tokyonight.nvim)
 
 The Tomorrow themes were created by [chriskempson](https://github.com/chriskempson/tomorrow-theme/tree/master/iTerm2)
 
 The Tomorrow Night Burns theme were created by [ashwinv11](https://github.com/ashwinv11/)
+
+The Trapped in Amber theme was created by [mattjoyce](https://github.com/mattjoyce/trapped-in-amber).
 
 The Twilight theme was created by [stefri](https://gist.github.com/stefri/1183140)
 
@@ -457,7 +540,7 @@ The Under The Sea theme was created by [peterpme](https://github.com/peterpme)
 
 The Unikitty theme was created by [jakebathman](https://github.com/jakebathman)
 
-The Vague theme was created by [vague2k](https://github.com/vague2k) and ported to iTerm2 by [carldaws](https://github.com/carldaws)
+The Vague theme was created by [vague2k](https://github.com/vague2k) and ported to iTerm2 by [skewb1k](https://github.com/skewb1k)
 
 The Vesper theme was originally created by [raunofreiberg](https://github.com/raunofreiberg) for VSCode, ported to iTerm2 by [geoffreybrunet](https://github.com/GeoffreyBrunet) and added by [ubmit](https://github.com/ubmit)
 
@@ -466,6 +549,8 @@ The VibrantInk theme was created by [asanghi](https://github.com/asanghi/vibrant
 The scheme Violet was created by [ashfinal](https://github.com/ashfinal/vim-colors-violet).
 
 The WarmNeon theme was ported from [PyCharm](http://www.jetbrains.com/pycharm/) by [firewut](https://github.com/firewut)
+
+The Warm Burnout Dark and Warm Burnout Light themes were created by [Felipe Lima](https://github.com/felipefdl) as part of the [Warm Burnout](https://github.com/felipefdl/warm-burnout) multi-platform theme suite.
 
 The Wez theme was created by [wez](https://gist.github.com/wez/850268/)
 
@@ -488,3 +573,359 @@ The Breadog theme was created by [Ruby Klover](https://gitlab.com/warningnonpota
 The Tearout theme was created by [leobeosab](https://github.com/leobeosab)
 
 The violite theme was created by [Link](https://github.com/4c696e6b)
+
+Poimandres theme was originally created by [drcmda](https://github.com/drcmda/poimandres-theme) and ported by [bastiangx](https://github.com/bastiangx)
+
+Onenord and Onenord Light theme was created by [Ryan Mehri](https://github.com/rmehri01/onenord.nvim)
+
+The Claude theme was created by [techfitmaster](https://github.com/techfitmaster/ghostty-claude-theme), inspired by the [Claude](https://claude.ai) AI interface color palette
+
+The JetCalm Light theme was created by [mtueih](https://github.com/mtueih) based on [Son A. Pham](https://github.com/sonph)'s [One Half Light](https://github.com/sonph/onehalf) theme, inspired by the [JetBrains](https://www.jetbrains.com) IDE interface color palette
+
+The Atlas Ragnarok theme was created by [Atlas Kaisar](https://github.com/AyoubTadlaoui) — tech-blue thunder above, crimson fire below, pure black through the middle. Built on the syntactic structure of [Vesper](https://github.com/raunofreiberg/vesper) with the warm-accent family remapped to a Tailwind blue gradient. Ships across many editors at [atlas-ragnarok](https://github.com/AyoubTadlaoui/atlas-ragnarok)
+
+The London Columbia Road, London Soho Night, London Bonfire Night, and London Embankment Dusk themes were created by [Scott Matthews](https://github.com/scottmatthews7) as a four-theme seasonal set, each anchored to a specific place and time in London: Columbia Road flower market in spring, a Soho side street in summer, Hampstead Heath on Bonfire Night in autumn, and the Embankment at dusk in winter.
+
+The Serendipity (Midnight, Morning, Sunset) and Sequoia (Moonlight, Monochrome, Retro — dark and light) themes were created by [Michael Andreuzza](https://github.com/michael-andreuzza). Source: [Serendipity-Theme](https://github.com/michael-andreuzza/Serendipity-Theme) and [Sequoia-Theme](https://github.com/michael-andreuzza/Sequoia-Theme).
+
+The Acid Lime, Aubade, Citrus Ink, Daybreak, Driftwood, Eclipse, Forge Ember, Frostbyte, Graphite, Green Phosphor CRT, Letterpress, Matcha Zen, Miami Heat, Nebula Drift, Opaline, Oxblood, Patina, Porcelain, Prism, Velvet Court, Verdigris, and Amber CRT Retro themes were created by [PoshPalette](https://github.com/livlign/posh-palette), an interactive PowerShell + Windows Terminal theme picker. Browse them at https://livlign.github.io/posh-palette/themes.html
+
+The Modus Operandi Deuteranopia, Modus Operandi Tritanopia, Modus Vivendi Deuteranopia, and Modus Vivendi Tritanopia themes are the colorblind-optimized variants (deuteranopia for red-green deficiency, tritanopia for blue-yellow deficiency) of the existing Modus themes, using the canonical palettes from [modus-themes](https://github.com/protesilaos/modus-themes) by [Protesilaos Stavrou](https://github.com/protesilaos). Contributed by [Aaron Kuehler](https://github.com/indiebrain).
+
+The Noctis theme family (Noctis, Noctis Azureus, Noctis Bordo, Noctis Hibernus, Noctis Lilac, Noctis Lux, Noctis Minimus, Noctis Obscuro, Noctis Sereno, Noctis Uva, and Noctis Viola) was created by [Liviu Schera](https://github.com/liviuschera) as a [VS Code theme family](https://github.com/liviuschera/noctis). Terminal ANSI values are pulled directly from each variant's `themes/*.json` file in the upstream repo. Ported to iTerm2 format by [Abel Dantas](https://github.com/abeldantas).
+
+The datum (dark) and datum (light) themes were created by [w0zro](https://github.com/w0zro) as [datum](https://github.com/w0zro/datum), a colorscheme derived in OKLCH from the colorblind-safe Okabe-Ito hues and verified against WCAG 2.2 and APCA contrast.
+
+The Nachtschicht theme was created by [notgabriels-sys](https://github.com/notgabriels-sys) as part of [50 dark themes for Claude Code](https://github.com/notgabriels-sys/claude-code-50-dark-themes), a set of terminal themes each built around a single accent, with WCAG contrast floors enforced at build time.
+
+The X theme family (X, X Madrid, X Lahabana, X Miami, X Paris, X Tokio, X Oslo, X Helsinki, X Berlin, X London, X Praha, and X Bogota) was created by [Xscriptor](https://github.com/xscriptor). Palette source: [xscriptor-colors/assets](https://github.com/xscriptor-colors/assets).
+
+The Syncopation theme was created by [mbadolato](mbadolato).
+
+The RadicalReborn theme was created by [AquaOctet](https://github.com/AquaOctet/radical-reborn).
+
+The Charcoal theme was created by [Vyom Jain](https://github.com/VyomJain6904). A deep-black grayscale theme (also available for bat and OpenCode at [charcoal-theme](https://github.com/VyomJain6904/charcoal-theme)).
+
+The Sonoran Dusk theme was created by Mark Badolato.
+
+The Arizona Monsoon theme was created by Mark Badolato.
+The After Hours theme was created by Mark Badolato.
+
+The Blueprint theme was created by Mark Badolato.
+The CRT Afterglow theme was created by Mark Badolato.
+
+The Deep Current theme was created by Mark Badolato.
+The Emberglass theme was created by Mark Badolato.
+
+The High Desert Snow theme was created by Mark Badolato.
+The Golden Retriever Cream theme was created by Mark Badolato.
+
+The Golden Retriever Honey theme was created by Mark Badolato.
+The Golden Retriever Red theme was created by Mark Badolato.
+
+The Nightfall theme was created by Mark Badolato.
+The Prince of Darkness theme was created by Mark Badolato.
+
+The Madman's Diary theme was created by Mark Badolato.
+The Ozz's Blizzard theme was created by Mark Badolato.
+
+The EVH FrankenTone theme was created by Mark Badolato.
+The Rhoads Legacy theme was created by Mark Badolato.
+
+The Rhoads Insipired theme was created by Mark Badolato.
+The Rhoads Concord theme was created by Mark Badolato.
+
+The Rhoads RR Black theme was created by Mark Badolato.
+The Rhoads LP theme was created by Mark Badolato.
+
+The Clockwork Gold theme was created by [Clockwork](https://www.clockwork.com), from [ClockworkNet/clockwork-gold](https://github.com/ClockworkNet/clockwork-gold). The palette is human-designed; the YAML source was converted from its Ghostty theme with AI assistance.
+
+The Daybreaker theme was created by Mark Badolato.
+
+The Horizons theme was created by Mark Badolato.
+
+The Northstar theme was created by Mark Badolato.
+The Obsurdian theme was created by Mark Badolato.
+
+The Eventide theme was created by Mark Badolato.
+The Molten Core theme was created by Mark Badolato.
+
+The Signal Ghost theme was created by Mark Badolato.
+The Icy Glacier theme was created by Mark Badolato.
+
+The Parchment theme was created by Mark Badolato.
+The Solar Flare theme was created by Mark Badolato.
+
+The Aurora Drift theme was created by Mark Badolato.
+The Frostline theme was created by Mark Badolato.
+
+The Willow Grove theme was created by Mark Badolato.
+The Cactus Bloom theme was created by Mark Badolato.
+
+The Ember Peak theme was created by Mark Badolato.
+The Neon Analog theme was created by Mark Badolato.
+
+The Afterimage theme was created by Mark Badolato.
+The Cold Storage theme was created by Mark Badolato.
+
+The Dead Letter Office theme was created by Mark Badolato.
+The Ghost Circuit theme was created by Mark Badolato.
+
+The Paper Tiger theme was created by Mark Badolato.
+The Vacuum Tube theme was created by Mark Badolato.
+
+The Black Box Recorder theme was created by Mark Badolato.
+The Carbon Paper theme was created by Mark Badolato.
+
+The Night Pharmacy theme was created by Mark Badolato.
+The Numbers Station theme was created by Mark Badolato.
+
+The Redacted theme was created by Mark Badolato.
+The Static Memory theme was created by Mark Badolato.
+
+The Green Screen theme was created by Mark Badolato.
+The Last Broadcast theme was created by Mark Badolato.
+
+The Lunar Dust theme was created by Mark Badolato.
+The Motel Vacancy theme was created by Mark Badolato.
+
+The Safety Glass theme was created by Mark Badolato.
+The Thermal Receipt theme was created by Mark Badolato.
+
+The Evergreen theme was created by Mark Badolato.
+
+The Kwyjibo theme was created by Mark Badolato.
+
+The Springfield Resident theme was created by Mark Badolato.
+
+The Springfield Resident Hight Contrast theme was created by Mark Badolato.
+
+The Aztec Sunset theme was created by Mark Badolato.
+
+The Saguaro theme was created by Mark Badolato.
+
+The Adobe Moon theme was created by Mark Badolato.
+
+The Agave Dusk theme was created by Mark Badolato.
+
+The Canyon Shadow theme was created by Mark Badolato.
+
+The Copper Canyon theme was created by Mark Badolato.
+
+The Desert Thunder theme was created by Mark Badolato.
+
+The Mesa Blue theme was created by Mark Badolato.
+
+The Monsoon Mesa theme was created by Mark Badolato.
+
+The Ocotillo theme was created by Mark Badolato.
+
+The Painted Desert theme was created by Mark Badolato.
+
+The Pueblo Night theme was created by Mark Badolato.
+
+The Red Rock theme was created by Mark Badolato.
+
+The Turquoise Trail theme was created by Mark Badolato.
+
+The Barrel Cactus theme was created by Mark Badolato.
+
+The Caliche theme was created by Mark Badolato.
+
+The Cholla theme was created by Mark Badolato.
+
+The Desert Bloom theme was created by Mark Badolato.
+
+The Desert Moon theme was created by Mark Badolato.
+
+The Desert Rose theme was created by Mark Badolato.
+
+The Mesa Twilight theme was created by Mark Badolato.
+
+The Petrified theme was created by Mark Badolato.
+
+The Prickly Pear theme was created by Mark Badolato.
+
+The Sedona theme was created by Mark Badolato.
+
+The Sun Bleached theme was created by Mark Badolato.
+
+The White Sands theme was created by Mark Badolato.
+
+The Tailwind Dark theme was created by [Bhajneet S.K.](https://github.com/bhajneet).
+
+The Tailwind Light theme was created by [Bhajneet S.K.](https://github.com/bhajneet).
+
+The Belfry theme was created by Mark Badolato.
+
+The Blood Moon theme was created by Mark Badolato.
+
+The Cobweb theme was created by Mark Badolato.
+
+The Crypt Keeper theme was created by Mark Badolato.
+
+The Harvest Moon theme was created by Mark Badolato.
+
+The Haunted House theme was created by Mark Badolato.
+
+The Jack O' Lantern theme was created by Mark Badolato.
+
+The Thirteen theme was created by Mark Badolato.
+
+The Trick or Treat theme was created by Mark Badolato.
+
+The Undead theme was created by Mark Badolato.
+
+The Witches' Brew theme was created by Mark Badolato.
+
+The Witching Hour theme was created by Mark Badolato.
+
+The Seance theme was created by Mark Badolato.
+
+The 13th Floor theme was created by Mark Badolato.
+
+The Abandoned theme was created by Mark Badolato.
+
+The Autumn After Dark theme was created by Mark Badolato.
+
+The Black Cat theme was created by Mark Badolato.
+
+The Bone Yard theme was created by Mark Badolato.
+
+The Candlelight theme was created by Mark Badolato.
+
+The Candy Corn theme was created by Mark Badolato.
+
+The Count Terminal theme was created by Mark Badolato.
+
+The Crystal Ball theme was created by Mark Badolato.
+
+The Cursed VHS theme was created by Mark Badolato.
+
+The Ectoplasm theme was created by Mark Badolato.
+
+The Graveyard Shift theme was created by Mark Badolato.
+
+The Great Pumpkin theme was created by Mark Badolato.
+
+The Hellfire theme was created by Mark Badolato.
+
+The Hocus Pocus theme was created by Mark Badolato.
+
+The Monster Mash theme was created by Mark Badolato.
+
+The Poison Apple theme was created by Mark Badolato.
+
+The Poltergeist theme was created by Mark Badolato.
+
+The Pumpkin Patch theme was created by Mark Badolato.
+
+The Pumpkin Spice theme was created by Mark Badolato.
+
+The Salem theme was created by Mark Badolato.
+
+The The Fog theme was created by Mark Badolato.
+
+The Possessed Toaster theme was created by Mark Badolato.
+
+The Pissed Off Pancakes theme was created by Mark Badolato.
+
+The [eyesclosed](https://github.com/thdxg/eyesclosed) theme was created by [thdxg](https://github.com/thdxg).
+
+The Canyon Walnut theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Desert Morning theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Jute Espresso theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Maple Jute theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Scabos Sand theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Sierra Gold theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Lit Cell theme was created by [Zerebos](https://github.com/zerebos).
+
+The Lit Cell Light theme was created by [Zerebos](https://github.com/zerebos).
+
+The 5150 Mode theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Detroit After Dark theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Diary of a Lunatic theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Dream Onward theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Eight Hundred theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Electric Voodoo theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Forged in Steel theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Golden Mischief theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The High Voltage Highway theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Hysterical Frequency theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Jump Start theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Kashmir Nights theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Midnight Rambler theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Mindcrime theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Moving Signals theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Paranoid Circuit theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Pharaoh's Voltage theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Prince of Barkness theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Prismatica theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Puppet's Master theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Rhoads Tribute theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Ride the Current theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Royal Rhapsody theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Silent Empire theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Smoke on the Terminal theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Stairway Skies theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Stardust Voltage theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Sunset Strip theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Sweet Emotion theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Tumbling Stones theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Unalive 'Em All theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Yngwie's Strat theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The iglass Dark and iglass Light themes were created by [Vuk Topalovic](https://github.com/vukkt) for [iglass](https://github.com/vukkt/iglass).
+
+The Zacess Light, Zacess Dark, Zacess Yellow on Black and Zacess Cream themes were created by [Zacess](https://zacess.com). Source: [zacesshq/themes](https://github.com/zacesshq/themes).
+
+The Analyzed Dark theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Analyzed Light theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Sunset Copper Relay theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The Gilded-Forest-Dark theme was created by [Sudhan Chitgopkar](https://github.com/sudhanchitgopkar/Gilded-Forest).
+
+The HN After Dark theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The HN Classic theme was created by [Mark Badolato](https://terminalthemes.com/users/01M38A2BPFG85ZT6EQ6PFA2WTM).
+
+The SLOMP theme was created by [SLOMP](https://terminalthemes.com/users/01M4Z2EPHX225W0N2YTBYSP6SF).

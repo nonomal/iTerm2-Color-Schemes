@@ -24,7 +24,7 @@
     },
     {
       "name": "CursorForeground",
-      "color": "#e6e1dc",
+      "color": "#c0bbb6",
       "terminalMapping": "cursorForeground"
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "name": "BrightBlack",
-      "color": "#323232",
+      "color": "#585858",
       "terminalMapping": "ansiBrightBlack"
     },
     {

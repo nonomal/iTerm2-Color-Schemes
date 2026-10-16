@@ -1,0 +1,41 @@
+(
+    name: "Dot Gov",
+    foreground: "#ebebeb",
+    background: "#262c35",
+    cursor: "#d9002f",
+    bright_foreground: "#ebebeb",
+    dim_foreground: "#595959",
+
+    normal: (
+        black: "#191919",
+        red: "#bf091d",
+        green: "#3d9751",
+        yellow: "#f6bb34",
+        blue: "#17b2e0",
+        magenta: "#7830b0",
+        cyan: "#8bd2ed",
+        white: "#ffffff"
+    ),
+
+    bright: (
+        black: "#595959",
+        red: "#bf091d",
+        green: "#3d9751",
+        yellow: "#f6bb34",
+        blue: "#17b2e0",
+        magenta: "#7830b0",
+        cyan: "#8bd2ed",
+        white: "#ffffff"
+    ),
+
+    dim: (
+        black: "#191919",
+        red: "#bf091d",
+        green: "#3d9751",
+        yellow: "#f6bb34",
+        blue: "#17b2e0",
+        magenta: "#7830b0",
+        cyan: "#8bd2ed",
+        white: "#ffffff"
+    ),
+)

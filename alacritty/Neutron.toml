@@ -1,7 +1,7 @@
 # Colors (Neutron)
 
 [colors.bright]
-black = '#23252b'
+black = '#494b51'
 blue = '#6a7c93'
 cyan = '#3f94a8'
 green = '#5ab977'
@@ -12,7 +12,7 @@ yellow = '#deb566'
 
 [colors.cursor]
 cursor = '#f6f7ec'
-text = '#c4c5b5'
+text = '#b7b8a8'
 
 [colors.normal]
 black = '#23252b'

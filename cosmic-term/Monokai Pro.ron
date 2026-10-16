@@ -1,0 +1,41 @@
+(
+    name: "Monokai Pro",
+    foreground: "#fcfcfa",
+    background: "#2d2a2e",
+    cursor: "#c1c0c0",
+    bright_foreground: "#fcfcfa",
+    dim_foreground: "#727072",
+
+    normal: (
+        black: "#2d2a2e",
+        red: "#ff6188",
+        green: "#a9dc76",
+        yellow: "#ffd866",
+        blue: "#fc9867",
+        magenta: "#ab9df2",
+        cyan: "#78dce8",
+        white: "#fcfcfa"
+    ),
+
+    bright: (
+        black: "#727072",
+        red: "#ff6188",
+        green: "#a9dc76",
+        yellow: "#ffd866",
+        blue: "#fc9867",
+        magenta: "#ab9df2",
+        cyan: "#78dce8",
+        white: "#fcfcfa"
+    ),
+
+    dim: (
+        black: "#2d2a2e",
+        red: "#ff6188",
+        green: "#a9dc76",
+        yellow: "#ffd866",
+        blue: "#fc9867",
+        magenta: "#ab9df2",
+        cyan: "#78dce8",
+        white: "#fcfcfa"
+    ),
+)

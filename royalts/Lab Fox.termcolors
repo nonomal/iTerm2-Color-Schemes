@@ -24,7 +24,7 @@
     },
     {
       "name": "CursorForeground",
-      "color": "#7f7f7f",
+      "color": "#b2b2b2",
       "terminalMapping": "cursorForeground"
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "name": "Magenta",
-      "color": "#380d75",
+      "color": "#6b40a8",
       "terminalMapping": "ansiMagenta"
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "name": "BrightBlack",
-      "color": "#464646",
+      "color": "#535353",
       "terminalMapping": "ansiBrightBlack"
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "name": "BrightMagenta",
-      "color": "#441090",
+      "color": "#6a36b6",
       "terminalMapping": "ansiBrightMagenta"
     },
     {

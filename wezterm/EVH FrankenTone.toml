@@ -1,0 +1,12 @@
+# EVH FrankenTone
+[colors]
+foreground = "#f7ede5"
+background = "#76231f"
+cursor_bg = "#f5cc48"
+cursor_border = "#f5cc48"
+cursor_fg = "#171313"
+selection_bg = "#201719"
+selection_fg = "#ffffff"
+
+ansi = ["#e7d8d0","#ffb4a5","#e6d27e","#f4d45d","#a9cbe7","#d9c3c9","#a7d7d7","#f7ede5"]
+brights = ["#c9b8b1","#ffd0bf","#f2e4a0","#ffe27d","#c5ddf3","#f0d8de","#c4e9e8","#ffffff"]
